@@ -1,0 +1,116 @@
+{
+  "drug_drug": [
+    {
+      "drugs": ["warfarin", "ibuprofen"],
+      "severity": "high",
+      "effect": "Significantly increased bleeding risk from combined anticoagulant and antiplatelet effects.",
+      "guideline_source": "Warfarin Anticoagulation Therapy Guideline",
+      "recommendation": "Avoid combination; if unavoidable, increase INR monitoring frequency."
+    },
+    {
+      "drugs": ["warfarin", "amoxicillin"],
+      "severity": "medium",
+      "effect": "Amoxicillin can potentiate warfarin's anticoagulant effect via altered gut flora and vitamin K metabolism.",
+      "guideline_source": "Warfarin Anticoagulation Therapy Guideline",
+      "recommendation": "Check INR within 3-5 days of starting concomitant antibiotic therapy."
+    },
+    {
+      "drugs": ["methotrexate", "ibuprofen"],
+      "severity": "high",
+      "effect": "NSAIDs reduce renal clearance of methotrexate, increasing risk of methotrexate toxicity.",
+      "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline",
+      "recommendation": "Use cautiously with increased CBC and renal function monitoring if combined."
+    },
+    {
+      "drugs": ["lisinopril", "furosemide"],
+      "severity": "low",
+      "effect": "Combined use can increase risk of hypotension and requires closer electrolyte monitoring.",
+      "guideline_source": "Diuretic Management in Heart Failure Guideline",
+      "recommendation": "Monitor blood pressure and serum potassium closely when combined."
+    },
+    {
+      "drugs": ["digoxin", "furosemide"],
+      "severity": "high",
+      "effect": "Furosemide-induced hypokalemia significantly increases the risk of digoxin toxicity (arrhythmia).",
+      "guideline_source": "Digoxin Therapy Guideline",
+      "recommendation": "Monitor serum potassium and digoxin levels closely when combined."
+    },
+    {
+      "drugs": ["clopidogrel", "omeprazole"],
+      "severity": "medium",
+      "effect": "Omeprazole inhibits CYP2C19-mediated activation of clopidogrel, reducing its antiplatelet effectiveness.",
+      "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline",
+      "recommendation": "Avoid combination; consider an alternative acid suppressant such as famotidine."
+    },
+    {
+      "drugs": ["clopidogrel", "warfarin"],
+      "severity": "high",
+      "effect": "Combined antiplatelet and anticoagulant therapy substantially increases bleeding risk.",
+      "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline",
+      "recommendation": "Avoid combination unless clearly indicated; monitor closely for bleeding if combined."
+    },
+    {
+      "drugs": ["clopidogrel", "ibuprofen"],
+      "severity": "medium",
+      "effect": "Combined antiplatelet and NSAID use increases gastrointestinal bleeding risk.",
+      "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline",
+      "recommendation": "Avoid concomitant use where possible; consider gastroprotection if unavoidable."
+    },
+    {
+      "drugs": ["prednisone", "ibuprofen"],
+      "severity": "medium",
+      "effect": "Combined corticosteroid and NSAID use increases risk of gastrointestinal ulceration and bleeding.",
+      "guideline_source": "Prednisone Corticosteroid Therapy Guideline",
+      "recommendation": "Use cautiously; consider co-prescribing a proton pump inhibitor for gastroprotection."
+    },
+    {
+      "drugs": ["lisinopril", "losartan"],
+      "severity": "medium",
+      "effect": "Combining an ACE inhibitor and ARB provides no added benefit and increases risk of hyperkalemia and renal impairment.",
+      "guideline_source": "Losartan (ARB) Therapy Guideline",
+      "recommendation": "Avoid combination; use a single renin-angiotensin system agent."
+    }
+  ],
+  "drug_diagnosis": [
+    {
+      "drug": "metformin",
+      "diagnosis": "renal impairment",
+      "severity": "high",
+      "effect": "Metformin is contraindicated or requires dose reduction in reduced renal function due to risk of lactic acidosis.",
+      "guideline_source": "Type 2 Diabetes Management Guideline",
+      "recommendation": "Confirm eGFR before prescribing; avoid if eGFR < 30 mL/min/1.73m2, reduce dose if 30-45."
+    },
+    {
+      "drug": "lisinopril",
+      "diagnosis": "pregnancy",
+      "severity": "high",
+      "effect": "ACE inhibitors are contraindicated in pregnancy due to risk of fetal harm.",
+      "guideline_source": "Hypertension Management Guideline",
+      "recommendation": "Discontinue and switch to a pregnancy-safe antihypertensive."
+    },
+    {
+      "drug": "losartan",
+      "diagnosis": "pregnancy",
+      "severity": "high",
+      "effect": "ARBs are contraindicated in pregnancy due to risk of fetal harm.",
+      "guideline_source": "Losartan (ARB) Therapy Guideline",
+      "recommendation": "Discontinue and switch to a pregnancy-safe antihypertensive."
+    },
+    {
+      "drug": "ibuprofen",
+      "diagnosis": "peptic ulcer disease",
+      "severity": "medium",
+      "effect": "NSAIDs increase risk of gastrointestinal bleeding in patients with active or prior peptic ulcer disease.",
+      "guideline_source": "General Prescribing Safety Guidance",
+      "recommendation": "Consider an alternative analgesic or co-prescribe a proton pump inhibitor."
+    },
+    {
+      "drug": "digoxin",
+      "diagnosis": "renal impairment",
+      "severity": "high",
+      "effect": "Digoxin is renally cleared; reduced renal function significantly increases risk of digoxin toxicity.",
+      "guideline_source": "Digoxin Therapy Guideline",
+      "recommendation": "Reduce dose and increase monitoring frequency of digoxin levels and renal function."
+    }
+  ]
+}

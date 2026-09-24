@@ -1,0 +1,17 @@
+langgraph>=0.2.0
+chromadb>=0.5.0
+scikit-learn>=1.4.0
+pyyaml>=6.0
+rank_bm25>=0.2.2
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+requests>=2.31.0
+sentence-transformers>=3.0.0
+sqlalchemy>=2.0.0
+bcrypt>=4.0.0
+python-jose[cryptography]>=3.3.0
+email-validator>=2.0.0
+
+# Optional, only needed if you switch PARSER_BACKEND to "llm", or for
+# LLM-phrased explanations (both require ANTHROPIC_API_KEY to be set)
+# anthropic>=0.30.0

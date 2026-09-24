@@ -1,0 +1,110 @@
+{
+  "warfarin": [
+    {
+      "test": "INR",
+      "frequency": "Every 2-3 days during initiation, then weekly until stable, then monthly",
+      "rationale": "Ensure anticoagulation is within therapeutic range and detect bleeding risk early.",
+      "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+    }
+  ],
+  "metformin": [
+    {
+      "test": "eGFR / Serum Creatinine",
+      "frequency": "Baseline and at least annually (every 3-6 months if reduced renal function)",
+      "rationale": "Metformin is contraindicated in significant renal impairment due to lactic acidosis risk.",
+      "guideline_source": "Type 2 Diabetes Management Guideline"
+    }
+  ],
+  "methotrexate": [
+    {
+      "test": "CBC",
+      "frequency": "Baseline, every 2-4 weeks for 3 months, then every 8-12 weeks",
+      "rationale": "Detect myelosuppression early.",
+      "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+    },
+    {
+      "test": "LFT",
+      "frequency": "Baseline, every 2-4 weeks for 3 months, then every 8-12 weeks",
+      "rationale": "Detect hepatotoxicity early.",
+      "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+    }
+  ],
+  "simvastatin": [
+    {
+      "test": "LFT",
+      "frequency": "Baseline",
+      "rationale": "Establish baseline liver function before starting statin therapy.",
+      "guideline_source": "Statin Therapy for Lipid Management Guideline"
+    }
+  ],
+  "furosemide": [
+    {
+      "test": "Serum Electrolytes (Potassium, Sodium) & Renal Function",
+      "frequency": "Baseline, 1-2 weeks after initiation/dose change, then periodically",
+      "rationale": "Detect hypokalemia, hyponatremia, and renal impairment early.",
+      "guideline_source": "Diuretic Management in Heart Failure Guideline"
+    }
+  ],
+  "lisinopril": [
+    {
+      "test": "Serum Creatinine & Potassium",
+      "frequency": "Baseline, 1-2 weeks after initiation, and at every dose titration",
+      "rationale": "Detect hyperkalemia and acute kidney injury risk from ACE inhibition.",
+      "guideline_source": "Hypertension Management Guideline"
+    }
+  ],
+  "digoxin": [
+    {
+      "test": "Serum Digoxin Level, Potassium & Renal Function",
+      "frequency": "Baseline, 1-2 weeks after initiation/dose change, then periodically",
+      "rationale": "Narrow therapeutic index; detect toxicity risk and renal-clearance changes early.",
+      "guideline_source": "Digoxin Therapy Guideline"
+    }
+  ],
+  "levothyroxine": [
+    {
+      "test": "TSH",
+      "frequency": "Baseline, every 6-8 weeks until stable, then annually",
+      "rationale": "Confirm dose is achieving euthyroid state without over- or under-replacement.",
+      "guideline_source": "Levothyroxine Therapy for Hypothyroidism Guideline"
+    }
+  ],
+  "clopidogrel": [
+    {
+      "test": "CBC",
+      "frequency": "Periodically during prolonged dual antiplatelet therapy",
+      "rationale": "Monitor for bleeding-related anemia.",
+      "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+    }
+  ],
+  "insulin": [
+    {
+      "test": "Blood Glucose",
+      "frequency": "Before meals and at bedtime during initiation/titration",
+      "rationale": "Titrate dose safely and detect hypoglycemia early.",
+      "guideline_source": "Insulin Therapy for Diabetes Guideline"
+    },
+    {
+      "test": "HbA1c",
+      "frequency": "Every 3 months until stable",
+      "rationale": "Assess longer-term glycemic control.",
+      "guideline_source": "Insulin Therapy for Diabetes Guideline"
+    }
+  ],
+  "losartan": [
+    {
+      "test": "Serum Creatinine & Potassium",
+      "frequency": "Baseline and within 1-2 weeks of initiation or dose titration",
+      "rationale": "Detect hyperkalemia and renal function changes from ARB therapy.",
+      "guideline_source": "Losartan (ARB) Therapy Guideline"
+    }
+  ],
+  "prednisone": [
+    {
+      "test": "Blood Glucose & Blood Pressure",
+      "frequency": "Periodically during therapy",
+      "rationale": "Corticosteroids can induce hyperglycemia and hypertension.",
+      "guideline_source": "Prednisone Corticosteroid Therapy Guideline"
+    }
+  ]
+}
