@@ -1,0 +1,65 @@
+[
+  {
+    "query": "What kidney and potassium tests should be checked when starting lisinopril for high blood pressure?",
+    "relevant_titles": ["Hypertension Management Guideline"]
+  },
+  {
+    "query": "For a patient with type 2 diabetes taking metformin, which renal function measure is important?",
+    "relevant_titles": ["Type 2 Diabetes Management Guideline"]
+  },
+  {
+    "query": "How often should INR be monitored after warfarin is initiated?",
+    "relevant_titles": ["Warfarin Anticoagulation Therapy Guideline"]
+  },
+  {
+    "query": "What blood count and liver tests are needed during methotrexate treatment for rheumatoid arthritis?",
+    "relevant_titles": ["Methotrexate Therapy for Rheumatoid Arthritis Guideline"]
+  },
+  {
+    "query": "Which electrolytes and kidney tests should be followed after a furosemide dose change?",
+    "relevant_titles": ["Diuretic Management in Heart Failure Guideline"]
+  },
+  {
+    "query": "Why should potassium, renal function, and serum levels be checked in a patient taking digoxin?",
+    "relevant_titles": ["Digoxin Therapy Guideline"]
+  },
+  {
+    "query": "When should TSH be repeated while adjusting levothyroxine for hypothyroidism?",
+    "relevant_titles": ["Levothyroxine Therapy for Hypothyroidism Guideline"]
+  },
+  {
+    "query": "What monitoring is recommended for insulin initiation and longer-term glucose control?",
+    "relevant_titles": ["Insulin Therapy for Diabetes Guideline"]
+  },
+  {
+    "query": "What baseline liver monitoring is recommended before atorvastatin?",
+    "relevant_titles": ["Atorvastatin Therapy for Lipid Management Guideline"]
+  },
+  {
+    "query": "What should be monitored after starting losartan or increasing its dose?",
+    "relevant_titles": ["Losartan (ARB) Therapy Guideline"]
+  },
+  {
+    "query": "What renal and potassium monitoring is appropriate when telmisartan is started?",
+    "relevant_titles": ["Telmisartan (ARB) Therapy Guideline"]
+  },
+  {
+    "query": "Can clopidogrel be taken with omeprazole, and what is the concern?",
+    "relevant_titles": [
+      "Clopidogrel Antiplatelet Therapy Guideline",
+      "Omeprazole Therapy for GERD Guideline"
+    ]
+  },
+  {
+    "query": "What are the key risks and monitoring considerations for prednisone therapy?",
+    "relevant_titles": ["Prednisone Corticosteroid Therapy Guideline"]
+  },
+  {
+    "query": "How should amlodipine therapy for hypertension be managed?",
+    "relevant_titles": ["Amlodipine (Calcium Channel Blocker) Therapy Guideline"]
+  },
+  {
+    "query": "What is the guidance for atorvastatin or simvastatin treatment of hyperlipidemia?",
+    "relevant_titles": ["Statin Therapy for Lipid Management Guideline"]
+  }
+]

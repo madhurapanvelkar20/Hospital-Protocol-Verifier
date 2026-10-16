@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Clean case \u2014 Lisinopril, tests already ordered",
+    "raw_text": "Prescribe Lisinopril 10mg oral once daily for hypertension.",
+    "diagnosis": "hypertension",
+    "ordered_tests": ["Serum Creatinine", "Serum Potassium"]
+  },
+  {
+    "label": "Missing test case \u2014 Metformin, no renal test ordered",
+    "raw_text": "Prescribe Metformin 500mg oral twice daily for type 2 diabetes.",
+    "diagnosis": "type 2 diabetes",
+    "ordered_tests": []
+  },
+  {
+    "label": "Drug-drug interaction case \u2014 Warfarin + Ibuprofen",
+    "raw_text": "Patient on Warfarin 5mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily for pain.",
+    "diagnosis": "atrial fibrillation",
+    "ordered_tests": ["INR"]
+  },
+  {
+    "label": "Drug-diagnosis contraindication \u2014 Metformin in renal impairment",
+    "raw_text": "Prescribe Metformin 500mg oral twice daily for type 2 diabetes.",
+    "diagnosis": "renal impairment",
+    "ordered_tests": ["eGFR"]
+  },
+  {
+    "label": "Multiple issues \u2014 Methotrexate + Ibuprofen, missing CBC",
+    "raw_text": "Prescribe Methotrexate 10mg oral once weekly for rheumatoid arthritis. Patient also takes Ibuprofen 400mg oral as needed for joint pain.",
+    "diagnosis": "rheumatoid arthritis",
+    "ordered_tests": ["LFT"]
+  }
+]

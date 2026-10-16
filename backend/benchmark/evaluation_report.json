@@ -1,0 +1,38 @@
+{
+  "no_agent": {
+    "case_accuracy": 0.333,
+    "violation_recall": 0.0,
+    "false_positive_rate": 0.0,
+    "per_category_accuracy": {
+      "clean": 1.0,
+      "missing_test": 0.0,
+      "drug_drug": 0.0,
+      "drug_diagnosis": 0.0,
+      "multiple": 0.0
+    }
+  },
+  "retrieval_only": {
+    "case_accuracy": 0.333,
+    "violation_recall": 0.0,
+    "false_positive_rate": 0.0,
+    "per_category_accuracy": {
+      "clean": 1.0,
+      "missing_test": 0.0,
+      "drug_drug": 0.0,
+      "drug_diagnosis": 0.0,
+      "multiple": 0.0
+    }
+  },
+  "full_pipeline": {
+    "case_accuracy": 1.0,
+    "violation_recall": 1.0,
+    "false_positive_rate": 0.0,
+    "per_category_accuracy": {
+      "clean": 1.0,
+      "missing_test": 1.0,
+      "drug_drug": 1.0,
+      "drug_diagnosis": 1.0,
+      "multiple": 1.0
+    }
+  }
+}

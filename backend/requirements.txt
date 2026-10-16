@@ -1,0 +1,31 @@
+langgraph>=0.2.0
+chromadb>=0.5.0
+scikit-learn>=1.4.0
+pyyaml>=6.0
+rank_bm25>=0.2.2
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+requests>=2.31.0
+sentence-transformers>=3.0.0
+sqlalchemy>=2.0.0
+bcrypt>=4.0.0
+python-jose[cryptography]>=3.3.0
+email-validator>=2.0.0
+python-multipart>=0.0.9
+pytesseract>=0.3.10
+pillow>=10.0.0
+
+# Optional, only needed when configuring PostgreSQL through DATABASE_URL or
+# DB_DIALECT=postgresql. The project uses the psycopg 3 SQLAlchemy driver.
+# psycopg[binary]>=3.1.18
+
+# Optional, only needed to apply/manage PostgreSQL schema migrations.
+# alembic>=1.13.0
+
+# Test-only: required to run tests under backend/tests.
+# pytest>=8.0.0
+# httpx>=0.27.0
+
+# Optional, only needed if you switch PARSER_BACKEND to "llm", or for
+# LLM-phrased explanations (both require ANTHROPIC_API_KEY to be set)
+# anthropic>=0.30.0
