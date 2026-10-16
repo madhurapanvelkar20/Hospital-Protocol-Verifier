@@ -106,7 +106,7 @@ users instead of engineers.
 
 ## 1. Database: SQLite → PostgreSQL, configurable
 
-**Migration status:** the PostgreSQL runtime now requires explicit Alembic schema migrations and has an opt-in SQLite copy script. The earlier setup snippet in this historical section predates that workflow; use [the PostgreSQL migration guide](./docs/POSTGRESQL_MIGRATION.md) for current environment configuration, data preservation, validation, and rollback instructions. PostgreSQL has not yet been tested against a real server.
+**Migration status:** PostgreSQL requires explicit Alembic schema migrations and has an opt-in SQLite copy script. The earlier setup snippet in this historical section predates that workflow; use [the PostgreSQL migration guide](./docs/POSTGRESQL_MIGRATION.md) for current environment configuration, data preservation, migration, and regression-test instructions. SQLite-only tests do not verify PostgreSQL behavior; run the opt-in integration test against a dedicated disposable database.
 
 **Why not MongoDB** (addressing this directly, since it's a reasonable
 question): this data is inherently relational — every verification

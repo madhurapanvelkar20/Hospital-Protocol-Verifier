@@ -179,20 +179,86 @@ def init_db():
     if engine.dialect.name != "postgresql":
         raise RuntimeError(f"Unsupported database dialect: {engine.dialect.name}")
 
-    if not inspect(engine).has_table("alembic_version"):
+    try:
+        with engine.connect() as connection:
+            inspector = inspect(connection)
+            if not inspector.has_table("alembic_version"):
+                raise RuntimeError(
+                    "PostgreSQL schema is not migrated. Run `alembic upgrade head` "
+                    "from the backend directory before starting the API."
+                )
+            revision = connection.execute(
+                text("SELECT version_num FROM alembic_version")
+            ).scalar_one_or_none()
+            if revision != POSTGRES_SCHEMA_REVISION:
+                raise RuntimeError(
+                    "PostgreSQL schema revision is not supported by this application. "
+                    "Run `alembic upgrade head` from the backend directory."
+                )
+
+            tables = set(inspector.get_table_names())
+            required_columns = {
+                "users": {
+                    "id",
+                    "email",
+                    "display_name",
+                    "hashed_password",
+                    "created_at",
+                },
+                "verification_history": {
+                    "id",
+                    "user_id",
+                    "raw_text",
+                    "diagnosis_hint",
+                    "result_json",
+                    "violation_count",
+                    "highest_severity",
+                    "created_at",
+                },
+            }
+            missing_tables = set(required_columns) - tables
+            if missing_tables:
+                raise RuntimeError(
+                    "PostgreSQL schema is missing required table(s): "
+                    + ", ".join(sorted(missing_tables))
+                    + ". Run `alembic upgrade head` from the backend directory."
+                )
+
+            for table, expected_columns in required_columns.items():
+                actual_columns = {
+                    column["name"] for column in inspector.get_columns(table)
+                }
+                missing_columns = expected_columns - actual_columns
+                if missing_columns:
+                    raise RuntimeError(
+                        f"PostgreSQL table {table!r} is missing required column(s): "
+                        + ", ".join(sorted(missing_columns))
+                        + ". Run `alembic upgrade head` from the backend directory."
+                    )
+
+            required_indexes = {
+                "users": {"ix_users_email"},
+                "verification_history": {
+                    "ix_verification_history_user_created_at"
+                },
+            }
+            for table, expected_indexes in required_indexes.items():
+                actual_indexes = {
+                    index["name"] for index in inspector.get_indexes(table)
+                }
+                missing_indexes = expected_indexes - actual_indexes
+                if missing_indexes:
+                    raise RuntimeError(
+                        f"PostgreSQL table {table!r} is missing required index(es): "
+                        + ", ".join(sorted(missing_indexes))
+                        + ". Run `alembic upgrade head` from the backend directory."
+                    )
+    except SQLAlchemyError as error:
         raise RuntimeError(
-            "PostgreSQL schema is not migrated. Run `alembic upgrade head` "
-            "from the backend directory before starting the API."
-        )
-    with engine.connect() as connection:
-        revision = connection.execute(
-            text("SELECT version_num FROM alembic_version")
-        ).scalar_one_or_none()
-    if revision != POSTGRES_SCHEMA_REVISION:
-        raise RuntimeError(
-            "PostgreSQL schema revision is not supported by this application. "
-            "Run `alembic upgrade head` from the backend directory."
-        )
+            "Could not connect to or inspect PostgreSQL to verify the schema. "
+            "Check the database connection settings, server availability, "
+            "and schema permissions."
+        ) from error
 
 
 def get_db() -> Session:

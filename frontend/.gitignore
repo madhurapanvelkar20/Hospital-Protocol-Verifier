@@ -22,3 +22,23 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Pytest cache
+.pytest_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example

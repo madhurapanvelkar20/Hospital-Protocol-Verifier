@@ -1,5 +1,8 @@
 """Unit tests for environment-driven SQLAlchemy database selection."""
 
+from types import SimpleNamespace
+from unittest.mock import Mock
+
 import pytest
 
 
@@ -121,3 +124,139 @@ def test_creation_timestamps_are_naive_utc_to_match_existing_schema():
         assert history_created_at.tzinfo is None
     finally:
         test_engine.dispose()
+
+
+def test_postgres_startup_rejects_revision_with_missing_required_table(
+    monkeypatch,
+):
+    import src.db as db
+
+    connection = Mock()
+    connection.__enter__ = Mock(return_value=connection)
+    connection.__exit__ = Mock(return_value=False)
+    connection.execute.return_value.scalar_one_or_none.return_value = (
+        db.POSTGRES_SCHEMA_REVISION
+    )
+    engine = Mock()
+    engine.dialect = SimpleNamespace(name="postgresql")
+    engine.connect.return_value = connection
+    inspector = Mock()
+    inspector.has_table.return_value = True
+    inspector.get_table_names.return_value = {"alembic_version", "users"}
+
+    monkeypatch.setattr(db, "_IS_SQLITE", False)
+    monkeypatch.setattr(db, "engine", engine)
+    monkeypatch.setattr(db, "inspect", lambda _engine: inspector)
+
+    with pytest.raises(RuntimeError, match="verification_history"):
+        db.init_db()
+
+
+def test_postgres_startup_rejects_schema_missing_history_index(monkeypatch):
+    import src.db as db
+
+    connection = Mock()
+    connection.__enter__ = Mock(return_value=connection)
+    connection.__exit__ = Mock(return_value=False)
+    connection.execute.return_value.scalar_one_or_none.return_value = (
+        db.POSTGRES_SCHEMA_REVISION
+    )
+    engine = Mock()
+    engine.dialect = SimpleNamespace(name="postgresql")
+    engine.connect.return_value = connection
+    inspector = Mock()
+    inspector.has_table.return_value = True
+    inspector.get_table_names.return_value = {
+        "alembic_version",
+        "users",
+        "verification_history",
+    }
+    inspector.get_columns.side_effect = [
+        [{"name": name} for name in (
+            "id",
+            "email",
+            "display_name",
+            "hashed_password",
+            "created_at",
+        )],
+        [{"name": name} for name in (
+            "id",
+            "user_id",
+            "raw_text",
+            "diagnosis_hint",
+            "result_json",
+            "violation_count",
+            "highest_severity",
+            "created_at",
+        )],
+    ]
+    inspector.get_indexes.side_effect = [
+        [{"name": "ix_users_email"}],
+        [{"name": "ix_verification_history_id"}],
+    ]
+
+    monkeypatch.setattr(db, "_IS_SQLITE", False)
+    monkeypatch.setattr(db, "engine", engine)
+    monkeypatch.setattr(db, "inspect", lambda _engine: inspector)
+
+    with pytest.raises(RuntimeError, match="ix_verification_history_user_created_at"):
+        db.init_db()
+
+
+def test_postgres_startup_accepts_current_schema(monkeypatch):
+    import src.db as db
+
+    connection = Mock()
+    connection.__enter__ = Mock(return_value=connection)
+    connection.__exit__ = Mock(return_value=False)
+    connection.execute.return_value.scalar_one_or_none.return_value = (
+        db.POSTGRES_SCHEMA_REVISION
+    )
+    engine = Mock()
+    engine.dialect = SimpleNamespace(name="postgresql")
+    engine.connect.return_value = connection
+    inspector = Mock()
+    inspector.has_table.return_value = True
+    inspector.get_table_names.return_value = {
+        "alembic_version",
+        "users",
+        "verification_history",
+    }
+    inspector.get_columns.side_effect = [
+        [
+            {"name": name}
+            for name in (
+                "id",
+                "email",
+                "display_name",
+                "hashed_password",
+                "created_at",
+            )
+        ],
+        [
+            {"name": name}
+            for name in (
+                "id",
+                "user_id",
+                "raw_text",
+                "diagnosis_hint",
+                "result_json",
+                "violation_count",
+                "highest_severity",
+                "created_at",
+            )
+        ],
+    ]
+    inspector.get_indexes.side_effect = [
+        [{"name": "ix_users_email"}],
+        [{"name": "ix_verification_history_user_created_at"}],
+    ]
+
+    monkeypatch.setattr(db, "_IS_SQLITE", False)
+    monkeypatch.setattr(db, "engine", engine)
+    monkeypatch.setattr(db, "inspect", lambda _connection: inspector)
+
+    db.init_db()
+
+    engine.connect.assert_called_once_with()
+    connection.execute.assert_called_once()

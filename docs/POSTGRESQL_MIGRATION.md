@@ -185,6 +185,56 @@ The migration preserves stored `result_json` text and integer IDs. The current `
 
 The opt-in test `backend/tests/test_postgres_integration.py` requires a dedicated, non-production PostgreSQL database at the current migration head and the Python test dependencies. It performs SQLAlchemy user/history CRUD and calls signup, login, `/api/auth/me`, verify (with pipeline execution stubbed), and history endpoints. It deletes only the uniquely named test users it created; it does not create/drop tables or run migrations.
 
+The test also checks persistence after closing and reopening a SQLAlchemy
+session, timestamp and relationship behavior, and that a second authenticated
+user cannot read the first user's history. `init_db()` checks the Alembic
+revision, application tables/columns, and required indexes without creating or
+migrating PostgreSQL schema. Connectivity or schema errors stop startup with
+an actionable error.
+
+For this workspace, use its existing Python interpreter from `backend`:
+
+```powershell
+$python = "..\..\.venv\Scripts\python.exe"
+$env:DB_DIALECT = "postgresql"
+$env:DB_HOST = "localhost"
+$env:DB_PORT = "5432"
+$env:DB_NAME = "hpv_test"
+$env:DB_USER = "hpv_test"
+$secure = Read-Host "PostgreSQL test password" -AsSecureString
+$env:DB_PASSWORD = [System.Net.NetworkCredential]::new("", $secure).Password
+$env:DATABASE_URL = & $python -c "import os; from sqlalchemy import URL; print(URL.create('postgresql+psycopg', username=os.environ['DB_USER'], password=os.environ['DB_PASSWORD'], host=os.environ['DB_HOST'], port=int(os.environ['DB_PORT']), database=os.environ['DB_NAME']).render_as_string(hide_password=False))"
+$env:TEST_DATABASE_URL = $env:DATABASE_URL
+$env:HPV_TEST_DATABASE_CONFIRMATION = "I_CONFIRM_THIS_IS_A_DISPOSABLE_TEST_DATABASE"
+$target = & $python -c "import os; from sqlalchemy.engine import make_url; u=make_url(os.environ['TEST_DATABASE_URL']); print(f'{u.get_backend_name()}|{u.host}|{u.port or 5432}|{u.database}')"
+if ($target -ne "postgresql|localhost|5432|hpv_test") { throw "Unexpected PostgreSQL test target: $target" }
+```
+
+The commands above keep the password in a process environment variable; do
+not print `$env:DATABASE_URL`. If this is a newly provisioned empty database,
+apply migrations only after verifying that target:
+
+```powershell
+& $python -m alembic upgrade head
+```
+
+Do not run that command against a database with existing or unknown contents.
+Then run the PostgreSQL integration test. To run the SQLite suite in a
+separate process, clear the PostgreSQL opt-in and use in-memory SQLite:
+
+```powershell
+& $python -m pytest -q -rs tests/test_postgres_integration.py
+Remove-Item Env:TEST_DATABASE_URL, Env:HPV_TEST_DATABASE_CONFIRMATION -ErrorAction SilentlyContinue
+$env:DATABASE_URL = "sqlite://"
+& $python -m pytest -q tests
+Remove-Item Env:DATABASE_URL, Env:DB_DIALECT, Env:DB_HOST, Env:DB_PORT, Env:DB_NAME, Env:DB_USER, Env:DB_PASSWORD -ErrorAction SilentlyContinue
+```
+
+The integration test creates UUID-named users and history records, verifies
+cross-session persistence and per-user history isolation, and deletes only
+those exact test users in a `finally` cleanup. It does not create/drop tables
+or run migrations.
+
 The test runner and FastAPI TestClient dependency (`pytest` and `httpx`) are
 listed as test-only requirements in `backend/requirements.txt`. With a dedicated test database
 configured by secret injection:
@@ -196,7 +246,12 @@ python -m pip install "pytest>=8.0.0" "httpx>=0.27.0"
 pytest -q tests/test_postgres_integration.py
 ```
 
-When `TEST_DATABASE_URL` is absent, this test module is skipped. Never point it at production data. A real PostgreSQL server/driver is required; SQLite tests or mocked engines do not count as PostgreSQL integration validation.
+When neither opt-in variable is set, this test module is skipped with a
+specific reason. If integration is partially enabled, the URL is invalid, the
+driver is missing, or the PostgreSQL server/schema is unavailable, collection
+or test execution fails rather than silently skipping. Never point it at
+production data. A real PostgreSQL server/driver is required; SQLite tests or
+mocked engines do not count as PostgreSQL integration validation.
 
 ## Cutover, rollback, and data retention
 
