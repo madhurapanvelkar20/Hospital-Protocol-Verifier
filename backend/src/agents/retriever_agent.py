@@ -10,6 +10,7 @@ reformulated (broadened) and re-queried once before handing off downstream,
 which is what should reduce false negatives from an overly narrow query.
 """
 
+import re
 from typing import Dict, Any
 
 from src.config import RETRIEVAL_CONFIDENCE_THRESHOLD, LIVE_FDA_RETRIEVAL_ENABLED
@@ -17,11 +18,30 @@ from src.state import VerifierState
 from src.vector_store import get_retriever
 from src.live_data import fetch_fda_label_chunks
 
+_RETRIEVAL_TERMS = {
+    # The local statin guideline describes "Simvastatin and other statins".
+    "atorvastatin": ("Simvastatin and other statins",),
+}
+
 
 def _build_query(state: VerifierState) -> str:
-    drugs = [d["name"] for d in state.get("parsed_drugs", [])]
-    diagnosis = state.get("parsed_diagnosis") or ""
-    return f"{diagnosis} treatment with {', '.join(drugs)}".strip()
+    drugs = [d["name"] for d in state.get("parsed_drugs", []) if d.get("recognized", True)]
+    diagnoses = state.get("parsed_diagnoses")
+    diagnosis = ", ".join(diagnoses) if diagnoses is not None else (state.get("parsed_diagnosis") or "")
+    retrieval_terms = [
+        term for drug in drugs for term in _RETRIEVAL_TERMS.get(drug.casefold(), ())
+    ]
+    return f"{diagnosis} treatment with {', '.join([*drugs, *retrieval_terms])}".strip()
+
+
+def _relevant_to_parsed_drug(chunk: Dict[str, Any], drugs: list) -> bool:
+    content = f"{chunk.get('title', '')} {chunk.get('text', '')}".casefold()
+    for drug in drugs:
+        terms = (drug["name"], *_RETRIEVAL_TERMS.get(drug["name"].casefold(), ()))
+        for term in terms:
+            if re.search(rf"(?<!\w){re.escape(term.casefold())}(?!\w)", content):
+                return True
+    return False
 
 
 def _reformulate_query(original_query: str, state: VerifierState) -> str:
@@ -38,7 +58,8 @@ def _fetch_live_chunks(state: VerifierState) -> list:
     live chunks for that drug, and the local corpus results still stand."""
     chunks = []
     for drug in state.get("parsed_drugs", []):
-        chunks.extend(fetch_fda_label_chunks(drug["name"]))
+        if drug.get("recognized", True):
+            chunks.extend(fetch_fda_label_chunks(drug["name"]))
     return chunks
 
 
@@ -52,16 +73,34 @@ def retrieve_protocol(state: VerifierState) -> Dict[str, Any]:
     than ranked against the local corpus's similarity scores, since it's
     an exact drug-name match rather than a semantic/keyword guess.
     """
+    known_drugs = [
+        drug for drug in state.get("parsed_drugs", [])
+        if drug.get("recognized", True)
+    ]
+    if not known_drugs:
+        return {
+            "retrieval_query": "",
+            "retrieved_chunks": [],
+            "retrieval_confidence": 0.0,
+            "retrieval_attempts": 0,
+        }
+
     retriever = get_retriever()
     query = _build_query(state)
-    results = retriever.query(query)
+    results = [
+        chunk for chunk in retriever.query(query)
+        if _relevant_to_parsed_drug(chunk, known_drugs)
+    ]
     confidence = results[0]["score"] if results else 0.0
     attempts = 1
 
     if confidence < RETRIEVAL_CONFIDENCE_THRESHOLD:
         # Self-correction loop: reformulate and re-query once.
         reformulated = _reformulate_query(query, state)
-        retry_results = retriever.query(reformulated)
+        retry_results = [
+            chunk for chunk in retriever.query(reformulated)
+            if _relevant_to_parsed_drug(chunk, known_drugs)
+        ]
         retry_confidence = retry_results[0]["score"] if retry_results else 0.0
         attempts = 2
         if retry_confidence > confidence:

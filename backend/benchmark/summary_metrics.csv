@@ -1,0 +1,4 @@
+System,Case Accuracy,Violation Precision,Violation Recall,F1 Score,False Positive Rate
+no_agent,0.25,,0.0,0.0,0.0
+retrieval_only,0.25,,0.0,0.0,0.0
+full_pipeline,1.0,1.0,1.0,1.0,0.0

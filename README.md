@@ -54,8 +54,8 @@ Verifier page (`ParsedDrugsTable`, `CitationList`, `ReportPanel`,
 `ResultBanner`), so a past run looks identical to a fresh one — click any
 entry to expand it.
 
-I also added the per-citation confidence score back into the "Matched
-guideline" card (`chunk.score`) — it had been dropped during the earlier
+Retrieved protocol context shows its confidence score (`chunk.score`) —
+it had been dropped during the earlier
 UI redesign that removed the pipeline rail.
 
 ## Setup
@@ -75,6 +75,21 @@ npm run dev
 Visit the site, click **Sign up**, create an account, and you'll land on
 the Verifier page. Everything you run there will show up on the History
 page.
+
+### OCR prerequisite
+
+Prescription-photo OCR requires the Tesseract OCR executable in addition
+to the Python `pytesseract` wrapper installed by `requirements.txt`.
+Install Tesseract for your operating system, make sure its executable is
+available on `PATH`, and verify it from PowerShell with:
+
+```powershell
+tesseract --version
+```
+
+The extracted text is editable before verification. If Tesseract is missing
+or cannot process the image, the OCR endpoint returns a visible error rather
+than reporting an empty extraction as successful.
 
 **New dependencies to be aware of**: `sqlalchemy`, `bcrypt`,
 `python-jose[cryptography]`, `email-validator` (backend);
@@ -201,7 +216,8 @@ find out and adjust `live_data.py`'s query construction.
 
 ## Everything else from v2 is unchanged
 
-- 16-drug corpus, synthetic benchmark, LLM parser — see the earlier
+- 18-medicine recognition inventory and bounded configured rule data,
+  synthetic benchmark, LLM parser — see the earlier
   README sections (still applicable) and `backend/benchmark/README.md`
   for the benchmark's honest limitations.
 - Setup commands are unchanged:
@@ -213,6 +229,20 @@ find out and adjust `live_data.py`'s query construction.
   ```
   Note: the first `uvicorn` run will now download the bge-large model —
   expect it to take longer than before on first start.
+
+## Clinical decision-support limitation
+
+This is an academic demonstration, not a clinically validated product or
+an official prescribing standard. The system preserves medicines it cannot
+assess, labels them as not assessed, and evaluates only the rules present in
+`backend/data/interactions.json` and
+`backend/data/monitoring_requirements.json`. No finding, empty retrieval, or
+successful extraction establishes that a prescription is safe. The active
+configuration does not include a Lisinopril–potassium chloride interaction;
+the application therefore does not claim to check that pair.
+See [the clinical coverage audit](backend/data/clinical_coverage_audit.md)
+for the active medicine and rule inventory, including items that require
+comparison with the unavailable review DOCX.
 
 ## What's still not done
 

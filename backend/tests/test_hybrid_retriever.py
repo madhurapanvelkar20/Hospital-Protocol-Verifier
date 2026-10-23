@@ -9,7 +9,6 @@ signals correctly rather than one silently dominating.
 """
 import sys
 import types
-import shutil
 from pathlib import Path
 
 import numpy as np
@@ -17,7 +16,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 
-def _install_fake_sentence_transformers(vector_map):
+def _install_fake_sentence_transformers(vector_map, monkeypatch):
     """vector_map: {text: [float,...]} -- fixed embeddings so dense
     similarity is fully predictable in the test."""
     fake_module = types.ModuleType("sentence_transformers")
@@ -30,17 +29,16 @@ def _install_fake_sentence_transformers(vector_map):
             return np.array([vector_map.get(t, [0.0] * 8) for t in texts])
 
     fake_module.SentenceTransformer = FakeSentenceTransformer
-    sys.modules["sentence_transformers"] = fake_module
+    monkeypatch.setitem(sys.modules, "sentence_transformers", fake_module)
 
 
-def test_bm25_signal_influences_ranking():
+def test_bm25_signal_influences_ranking(tmp_path, monkeypatch):
     """A chunk with strong keyword overlap for a rare, specific term should
     rank highly via BM25 even when every chunk gets an IDENTICAL (flat)
     dense score -- proving BM25 is a real contributor, not dead weight."""
     import src.config as config
-    test_chroma_dir = Path("/tmp/test_chroma_bm25_check")
-    shutil.rmtree(test_chroma_dir, ignore_errors=True)
-    config.CHROMA_PERSIST_DIR = test_chroma_dir
+    test_chroma_dir = tmp_path / "chroma_bm25"
+    monkeypatch.setattr(config, "CHROMA_PERSIST_DIR", test_chroma_dir)
 
     from src.vector_store import load_protocol_chunks
     chunks = load_protocol_chunks()
@@ -48,7 +46,7 @@ def test_bm25_signal_influences_ranking():
     # Every chunk gets the SAME fake embedding -> dense similarity is flat
     # across all of them, so any ranking difference must come from BM25.
     flat_vector_map = {c["text"]: [1.0] * 8 for c in chunks}
-    _install_fake_sentence_transformers(flat_vector_map)
+    _install_fake_sentence_transformers(flat_vector_map, monkeypatch)
 
     import importlib
     import src.vector_store as vs
@@ -65,17 +63,15 @@ def test_bm25_signal_influences_ranking():
     )
     print("PASS: BM25 keyword signal correctly influences ranking even with a flat dense score")
 
-    shutil.rmtree(test_chroma_dir, ignore_errors=True)
 
 
-def test_hybrid_fusion_combines_both_signals():
+def test_hybrid_fusion_combines_both_signals(tmp_path, monkeypatch):
     """With DIFFERENT dense scores per chunk, confirm the top result
     reflects a combination -- not purely one signal -- by checking that
     changing dense_weight changes the ranking outcome."""
     import src.config as config
-    test_chroma_dir = Path("/tmp/test_chroma_fusion_check")
-    shutil.rmtree(test_chroma_dir, ignore_errors=True)
-    config.CHROMA_PERSIST_DIR = test_chroma_dir
+    test_chroma_dir = tmp_path / "chroma_fusion"
+    monkeypatch.setattr(config, "CHROMA_PERSIST_DIR", test_chroma_dir)
 
     from src.vector_store import load_protocol_chunks
     chunks = load_protocol_chunks()
@@ -92,7 +88,7 @@ def test_hybrid_fusion_combines_both_signals():
             vector_map[c["text"]] = [1.0] * 8
         else:
             vector_map[c["text"]] = [-1.0] * 8
-    _install_fake_sentence_transformers(vector_map)
+    _install_fake_sentence_transformers(vector_map, monkeypatch)
 
     import importlib
     import src.vector_store as vs
@@ -104,9 +100,6 @@ def test_hybrid_fusion_combines_both_signals():
     assert any("Warfarin" in r["source"] or "Hematology" in r["source"] for r in results_dense_only[:1]), \
         f"Expected dense_weight=1.0 to favor the artificially-boosted Warfarin chunk, got {results_dense_only[0]['source']}"
     print("PASS: dense_weight=1.0 behaves as pure dense retrieval (sanity check on the fusion math)")
-
-    shutil.rmtree(test_chroma_dir, ignore_errors=True)
-
 
 if __name__ == "__main__":
     test_bm25_signal_influences_ranking()

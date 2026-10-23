@@ -73,3 +73,30 @@ export function verifyPrescription({ rawText, diagnosisHint, orderedTests }, tok
 export function fetchHistory(token) {
   return request("/history", {}, token);
 }
+
+export async function ocrExtractText(file, token) {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const res = await fetch(`${API_BASE}/ocr/extract`, {
+    method: "POST",
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+    body: formData, // NOTE: no Content-Type header here -- the browser
+    // sets the correct multipart/form-data boundary itself; setting it
+    // manually breaks the upload.
+  });
+
+  if (!res.ok) {
+    let detail = res.statusText;
+    try {
+      const body = await res.json();
+      detail = body.detail || detail;
+    } catch {
+      /* non-JSON error body */
+    }
+    const error = new Error(detail);
+    error.status = res.status;
+    throw error;
+  }
+  return res.json();
+}

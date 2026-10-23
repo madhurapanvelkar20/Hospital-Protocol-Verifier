@@ -1,38 +1,191 @@
 {
   "no_agent": {
-    "case_accuracy": 0.333,
+    "case_accuracy": 0.25,
+    "violation_precision": null,
     "violation_recall": 0.0,
+    "f1_score": 0.0,
     "false_positive_rate": 0.0,
-    "per_category_accuracy": {
-      "clean": 1.0,
-      "missing_test": 0.0,
-      "drug_drug": 0.0,
-      "drug_diagnosis": 0.0,
-      "multiple": 0.0
+    "counts": {
+      "total_cases": 100,
+      "clean_cases": 25,
+      "clean_false_positives": 0,
+      "total_tp": 0,
+      "total_fp": 0,
+      "total_fn": 97,
+      "total_tn": 25
+    },
+    "per_category": {
+      "clean": {
+        "total_cases": 25,
+        "case_accuracy": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "recall": null,
+        "precision": null
+      },
+      "missing_test": {
+        "total_cases": 25,
+        "case_accuracy": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 27,
+        "recall": 0.0,
+        "precision": null
+      },
+      "drug_drug": {
+        "total_cases": 20,
+        "case_accuracy": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 20,
+        "recall": 0.0,
+        "precision": null
+      },
+      "drug_diagnosis": {
+        "total_cases": 15,
+        "case_accuracy": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 15,
+        "recall": 0.0,
+        "precision": null
+      },
+      "multiple": {
+        "total_cases": 15,
+        "case_accuracy": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 35,
+        "recall": 0.0,
+        "precision": null
+      }
     }
   },
   "retrieval_only": {
-    "case_accuracy": 0.333,
+    "case_accuracy": 0.25,
+    "violation_precision": null,
     "violation_recall": 0.0,
+    "f1_score": 0.0,
     "false_positive_rate": 0.0,
-    "per_category_accuracy": {
-      "clean": 1.0,
-      "missing_test": 0.0,
-      "drug_drug": 0.0,
-      "drug_diagnosis": 0.0,
-      "multiple": 0.0
+    "counts": {
+      "total_cases": 100,
+      "clean_cases": 25,
+      "clean_false_positives": 0,
+      "total_tp": 0,
+      "total_fp": 0,
+      "total_fn": 97,
+      "total_tn": 25
+    },
+    "per_category": {
+      "clean": {
+        "total_cases": 25,
+        "case_accuracy": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "recall": null,
+        "precision": null
+      },
+      "missing_test": {
+        "total_cases": 25,
+        "case_accuracy": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 27,
+        "recall": 0.0,
+        "precision": null
+      },
+      "drug_drug": {
+        "total_cases": 20,
+        "case_accuracy": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 20,
+        "recall": 0.0,
+        "precision": null
+      },
+      "drug_diagnosis": {
+        "total_cases": 15,
+        "case_accuracy": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 15,
+        "recall": 0.0,
+        "precision": null
+      },
+      "multiple": {
+        "total_cases": 15,
+        "case_accuracy": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 35,
+        "recall": 0.0,
+        "precision": null
+      }
     }
   },
   "full_pipeline": {
     "case_accuracy": 1.0,
+    "violation_precision": 1.0,
     "violation_recall": 1.0,
+    "f1_score": 1.0,
     "false_positive_rate": 0.0,
-    "per_category_accuracy": {
-      "clean": 1.0,
-      "missing_test": 1.0,
-      "drug_drug": 1.0,
-      "drug_diagnosis": 1.0,
-      "multiple": 1.0
+    "counts": {
+      "total_cases": 100,
+      "clean_cases": 25,
+      "clean_false_positives": 0,
+      "total_tp": 97,
+      "total_fp": 0,
+      "total_fn": 0,
+      "total_tn": 25
+    },
+    "per_category": {
+      "clean": {
+        "total_cases": 25,
+        "case_accuracy": 1.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "recall": null,
+        "precision": null
+      },
+      "missing_test": {
+        "total_cases": 25,
+        "case_accuracy": 1.0,
+        "tp": 27,
+        "fp": 0,
+        "fn": 0,
+        "recall": 1.0,
+        "precision": 1.0
+      },
+      "drug_drug": {
+        "total_cases": 20,
+        "case_accuracy": 1.0,
+        "tp": 20,
+        "fp": 0,
+        "fn": 0,
+        "recall": 1.0,
+        "precision": 1.0
+      },
+      "drug_diagnosis": {
+        "total_cases": 15,
+        "case_accuracy": 1.0,
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "recall": 1.0,
+        "precision": 1.0
+      },
+      "multiple": {
+        "total_cases": 15,
+        "case_accuracy": 1.0,
+        "tp": 35,
+        "fp": 0,
+        "fn": 0,
+        "recall": 1.0,
+        "precision": 1.0
+      }
     }
   }
 }

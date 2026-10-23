@@ -7,30 +7,72 @@
     "ordered_tests": [
       "Serum Creatinine & Potassium"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
     "id": "clean_002",
+    "category": "clean",
+    "raw_text": "Prescribe Lisinopril 20mg oral once daily for hypertension.",
+    "diagnosis_hint": "hypertension",
+    "ordered_tests": [
+      "Serum Creatinine & Potassium"
+    ],
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
+  },
+  {
+    "id": "clean_003",
     "category": "clean",
     "raw_text": "Prescribe Metformin 500mg oral twice daily for type 2 diabetes.",
     "diagnosis_hint": "type 2 diabetes",
     "ordered_tests": [
       "eGFR / Serum Creatinine"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_003",
+    "id": "clean_004",
+    "category": "clean",
+    "raw_text": "Prescribe Metformin 1000mg oral twice daily for type 2 diabetes.",
+    "diagnosis_hint": "type 2 diabetes",
+    "ordered_tests": [
+      "eGFR / Serum Creatinine"
+    ],
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
+  },
+  {
+    "id": "clean_005",
     "category": "clean",
     "raw_text": "Prescribe Warfarin 5mg oral once daily for atrial fibrillation.",
     "diagnosis_hint": "atrial fibrillation",
     "ordered_tests": [
       "INR"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_004",
+    "id": "clean_006",
+    "category": "clean",
+    "raw_text": "Prescribe Warfarin 2.5mg oral once daily for atrial fibrillation.",
+    "diagnosis_hint": "atrial fibrillation",
+    "ordered_tests": [
+      "INR"
+    ],
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
+  },
+  {
+    "id": "clean_007",
     "category": "clean",
     "raw_text": "Prescribe Methotrexate 10mg oral once weekly for rheumatoid arthritis.",
     "diagnosis_hint": "rheumatoid arthritis",
@@ -38,84 +80,163 @@
       "CBC",
       "LFT"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_005",
+    "id": "clean_008",
+    "category": "clean",
+    "raw_text": "Prescribe Methotrexate 15mg oral once weekly for rheumatoid arthritis.",
+    "diagnosis_hint": "rheumatoid arthritis",
+    "ordered_tests": [
+      "CBC",
+      "LFT"
+    ],
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
+  },
+  {
+    "id": "clean_009",
     "category": "clean",
     "raw_text": "Prescribe Simvastatin 20mg oral once daily for hyperlipidemia.",
     "diagnosis_hint": "hyperlipidemia",
     "ordered_tests": [
       "LFT"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_006",
+    "id": "clean_010",
+    "category": "clean",
+    "raw_text": "Prescribe Simvastatin 40mg oral once daily for hyperlipidemia.",
+    "diagnosis_hint": "hyperlipidemia",
+    "ordered_tests": [
+      "LFT"
+    ],
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
+  },
+  {
+    "id": "clean_011",
     "category": "clean",
     "raw_text": "Prescribe Furosemide 40mg oral once daily for heart failure.",
     "diagnosis_hint": "heart failure",
     "ordered_tests": [
       "Serum Electrolytes (Potassium, Sodium) & Renal Function"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_007",
+    "id": "clean_012",
+    "category": "clean",
+    "raw_text": "Prescribe Furosemide 20mg oral once daily for heart failure.",
+    "diagnosis_hint": "heart failure",
+    "ordered_tests": [
+      "Serum Electrolytes (Potassium, Sodium) & Renal Function"
+    ],
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
+  },
+  {
+    "id": "clean_013",
     "category": "clean",
     "raw_text": "Prescribe Ibuprofen 400mg oral three times daily for rheumatoid arthritis.",
     "diagnosis_hint": "rheumatoid arthritis",
     "ordered_tests": [],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_008",
+    "id": "clean_014",
     "category": "clean",
     "raw_text": "Prescribe Amoxicillin 500mg oral three times daily for coronary artery disease.",
     "diagnosis_hint": "coronary artery disease",
     "ordered_tests": [],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_009",
+    "id": "clean_015",
     "category": "clean",
     "raw_text": "Prescribe Digoxin 0.25mg oral once daily for heart failure.",
     "diagnosis_hint": "heart failure",
     "ordered_tests": [
       "Serum Digoxin Level, Potassium & Renal Function"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_010",
+    "id": "clean_016",
+    "category": "clean",
+    "raw_text": "Prescribe Digoxin 0.125mg oral once daily for heart failure.",
+    "diagnosis_hint": "heart failure",
+    "ordered_tests": [
+      "Serum Digoxin Level, Potassium & Renal Function"
+    ],
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
+  },
+  {
+    "id": "clean_017",
     "category": "clean",
     "raw_text": "Prescribe Levothyroxine 100mcg oral once daily for hypothyroidism.",
     "diagnosis_hint": "hypothyroidism",
     "ordered_tests": [
       "TSH"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_011",
+    "id": "clean_018",
+    "category": "clean",
+    "raw_text": "Prescribe Levothyroxine 50mcg oral once daily for hypothyroidism.",
+    "diagnosis_hint": "hypothyroidism",
+    "ordered_tests": [
+      "TSH"
+    ],
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
+  },
+  {
+    "id": "clean_019",
     "category": "clean",
     "raw_text": "Prescribe Omeprazole 20mg oral once daily for gastroesophageal reflux disease.",
     "diagnosis_hint": "gastroesophageal reflux disease",
     "ordered_tests": [],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_012",
+    "id": "clean_020",
     "category": "clean",
     "raw_text": "Prescribe Clopidogrel 75mg oral once daily for coronary artery disease.",
     "diagnosis_hint": "coronary artery disease",
     "ordered_tests": [
       "CBC"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_013",
+    "id": "clean_021",
     "category": "clean",
     "raw_text": "Prescribe Insulin 10mg oral once daily for type 2 diabetes.",
     "diagnosis_hint": "type 2 diabetes",
@@ -123,397 +244,2097 @@
       "Blood Glucose",
       "HbA1c"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_014",
+    "id": "clean_022",
     "category": "clean",
     "raw_text": "Prescribe Losartan 50mg oral once daily for hypertension.",
     "diagnosis_hint": "hypertension",
     "ordered_tests": [
       "Serum Creatinine & Potassium"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_015",
+    "id": "clean_023",
+    "category": "clean",
+    "raw_text": "Prescribe Losartan 100mg oral once daily for hypertension.",
+    "diagnosis_hint": "hypertension",
+    "ordered_tests": [
+      "Serum Creatinine & Potassium"
+    ],
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
+  },
+  {
+    "id": "clean_024",
     "category": "clean",
     "raw_text": "Prescribe Prednisone 10mg oral once daily for rheumatoid arthritis.",
     "diagnosis_hint": "rheumatoid arthritis",
     "ordered_tests": [
       "Blood Glucose & Blood Pressure"
     ],
-    "expected_violation_types": []
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
-    "id": "clean_016",
+    "id": "clean_025",
     "category": "clean",
     "raw_text": "Prescribe Amlodipine 5mg oral once daily for hypertension.",
     "diagnosis_hint": "hypertension",
     "ordered_tests": [],
-    "expected_violation_types": []
-  },
-  {
-    "id": "missing_test_017",
-    "category": "missing_test",
-    "raw_text": "Prescribe Lisinopril 10mg oral once daily for hypertension.",
-    "diagnosis_hint": "hypertension",
-    "ordered_tests": [],
-    "expected_violation_types": [
-      "missing monitoring test"
-    ]
-  },
-  {
-    "id": "missing_test_018",
-    "category": "missing_test",
-    "raw_text": "Prescribe Metformin 500mg oral twice daily for type 2 diabetes.",
-    "diagnosis_hint": "type 2 diabetes",
-    "ordered_tests": [],
-    "expected_violation_types": [
-      "missing monitoring test"
-    ]
-  },
-  {
-    "id": "missing_test_019",
-    "category": "missing_test",
-    "raw_text": "Prescribe Warfarin 5mg oral once daily for atrial fibrillation.",
-    "diagnosis_hint": "atrial fibrillation",
-    "ordered_tests": [],
-    "expected_violation_types": [
-      "missing monitoring test"
-    ]
-  },
-  {
-    "id": "missing_test_020",
-    "category": "missing_test",
-    "raw_text": "Prescribe Methotrexate 10mg oral once weekly for rheumatoid arthritis.",
-    "diagnosis_hint": "rheumatoid arthritis",
-    "ordered_tests": [],
-    "expected_violation_types": [
-      "missing monitoring test",
-      "missing monitoring test"
-    ]
-  },
-  {
-    "id": "missing_test_021",
-    "category": "missing_test",
-    "raw_text": "Prescribe Simvastatin 20mg oral once daily for hyperlipidemia.",
-    "diagnosis_hint": "hyperlipidemia",
-    "ordered_tests": [],
-    "expected_violation_types": [
-      "missing monitoring test"
-    ]
-  },
-  {
-    "id": "missing_test_022",
-    "category": "missing_test",
-    "raw_text": "Prescribe Furosemide 40mg oral once daily for heart failure.",
-    "diagnosis_hint": "heart failure",
-    "ordered_tests": [],
-    "expected_violation_types": [
-      "missing monitoring test"
-    ]
-  },
-  {
-    "id": "missing_test_023",
-    "category": "missing_test",
-    "raw_text": "Prescribe Digoxin 0.25mg oral once daily for heart failure.",
-    "diagnosis_hint": "heart failure",
-    "ordered_tests": [],
-    "expected_violation_types": [
-      "missing monitoring test"
-    ]
-  },
-  {
-    "id": "missing_test_024",
-    "category": "missing_test",
-    "raw_text": "Prescribe Levothyroxine 100mcg oral once daily for hypothyroidism.",
-    "diagnosis_hint": "hypothyroidism",
-    "ordered_tests": [],
-    "expected_violation_types": [
-      "missing monitoring test"
-    ]
-  },
-  {
-    "id": "missing_test_025",
-    "category": "missing_test",
-    "raw_text": "Prescribe Clopidogrel 75mg oral once daily for coronary artery disease.",
-    "diagnosis_hint": "coronary artery disease",
-    "ordered_tests": [],
-    "expected_violation_types": [
-      "missing monitoring test"
-    ]
+    "expected_violations": [],
+    "expected_violation_types": [],
+    "relevant_rules": []
   },
   {
     "id": "missing_test_026",
     "category": "missing_test",
-    "raw_text": "Prescribe Insulin 10mg oral once daily for type 2 diabetes.",
-    "diagnosis_hint": "type 2 diabetes",
+    "raw_text": "Prescribe Warfarin 5mg oral once daily for atrial fibrillation.",
+    "diagnosis_hint": "atrial fibrillation",
     "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "warfarin",
+        "test": "INR",
+        "frequency": "Every 2-3 days during initiation, then weekly until stable, then monthly",
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
-      "missing monitoring test",
       "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:warfarin:INR"
     ]
   },
   {
     "id": "missing_test_027",
     "category": "missing_test",
-    "raw_text": "Prescribe Losartan 50mg oral once daily for hypertension.",
-    "diagnosis_hint": "hypertension",
+    "raw_text": "Prescribe Warfarin 2.5mg oral once daily for atrial fibrillation.",
+    "diagnosis_hint": "atrial fibrillation",
     "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "warfarin",
+        "test": "INR",
+        "frequency": "Every 2-3 days during initiation, then weekly until stable, then monthly",
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:warfarin:INR"
     ]
   },
   {
     "id": "missing_test_028",
     "category": "missing_test",
+    "raw_text": "Prescribe Metformin 500mg oral twice daily for type 2 diabetes.",
+    "diagnosis_hint": "type 2 diabetes",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "metformin",
+        "test": "eGFR / Serum Creatinine",
+        "frequency": "Baseline and at least annually (every 3-6 months if reduced renal function)",
+        "guideline_source": "Type 2 Diabetes Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:metformin:eGFR / Serum Creatinine"
+    ]
+  },
+  {
+    "id": "missing_test_029",
+    "category": "missing_test",
+    "raw_text": "Prescribe Metformin 1000mg oral twice daily for type 2 diabetes.",
+    "diagnosis_hint": "type 2 diabetes",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "metformin",
+        "test": "eGFR / Serum Creatinine",
+        "frequency": "Baseline and at least annually (every 3-6 months if reduced renal function)",
+        "guideline_source": "Type 2 Diabetes Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:metformin:eGFR / Serum Creatinine"
+    ]
+  },
+  {
+    "id": "missing_test_030",
+    "category": "missing_test",
+    "raw_text": "Prescribe Methotrexate 10mg oral once weekly for rheumatoid arthritis.",
+    "diagnosis_hint": "rheumatoid arthritis",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "methotrexate",
+        "test": "CBC",
+        "frequency": "Baseline, every 2-4 weeks for 3 months, then every 8-12 weeks",
+        "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "methotrexate",
+        "test": "LFT",
+        "frequency": "Baseline, every 2-4 weeks for 3 months, then every 8-12 weeks",
+        "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:methotrexate:CBC",
+      "monitoring:methotrexate:LFT"
+    ]
+  },
+  {
+    "id": "missing_test_031",
+    "category": "missing_test",
+    "raw_text": "Prescribe Methotrexate 15mg oral once weekly for rheumatoid arthritis.",
+    "diagnosis_hint": "rheumatoid arthritis",
+    "ordered_tests": [
+      "CBC"
+    ],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "methotrexate",
+        "test": "LFT",
+        "frequency": "Baseline, every 2-4 weeks for 3 months, then every 8-12 weeks",
+        "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:methotrexate:LFT"
+    ]
+  },
+  {
+    "id": "missing_test_032",
+    "category": "missing_test",
+    "raw_text": "Prescribe Methotrexate 7.5mg oral once weekly for rheumatoid arthritis.",
+    "diagnosis_hint": "rheumatoid arthritis",
+    "ordered_tests": [
+      "LFT"
+    ],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "methotrexate",
+        "test": "CBC",
+        "frequency": "Baseline, every 2-4 weeks for 3 months, then every 8-12 weeks",
+        "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:methotrexate:CBC"
+    ]
+  },
+  {
+    "id": "missing_test_033",
+    "category": "missing_test",
+    "raw_text": "Prescribe Simvastatin 20mg oral once daily for hyperlipidemia.",
+    "diagnosis_hint": "hyperlipidemia",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "simvastatin",
+        "test": "LFT",
+        "frequency": "Baseline",
+        "guideline_source": "Statin Therapy for Lipid Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:simvastatin:LFT"
+    ]
+  },
+  {
+    "id": "missing_test_034",
+    "category": "missing_test",
+    "raw_text": "Prescribe Simvastatin 40mg oral once daily for hyperlipidemia.",
+    "diagnosis_hint": "hyperlipidemia",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "simvastatin",
+        "test": "LFT",
+        "frequency": "Baseline",
+        "guideline_source": "Statin Therapy for Lipid Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:simvastatin:LFT"
+    ]
+  },
+  {
+    "id": "missing_test_035",
+    "category": "missing_test",
+    "raw_text": "Prescribe Furosemide 40mg oral once daily for heart failure.",
+    "diagnosis_hint": "heart failure",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "furosemide",
+        "test": "Serum Electrolytes (Potassium, Sodium) & Renal Function",
+        "frequency": "Baseline, 1-2 weeks after initiation/dose change, then periodically",
+        "guideline_source": "Diuretic Management in Heart Failure Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:furosemide:Serum Electrolytes (Potassium, Sodium) & Renal Function"
+    ]
+  },
+  {
+    "id": "missing_test_036",
+    "category": "missing_test",
+    "raw_text": "Prescribe Furosemide 20mg oral once daily for heart failure.",
+    "diagnosis_hint": "heart failure",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "furosemide",
+        "test": "Serum Electrolytes (Potassium, Sodium) & Renal Function",
+        "frequency": "Baseline, 1-2 weeks after initiation/dose change, then periodically",
+        "guideline_source": "Diuretic Management in Heart Failure Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:furosemide:Serum Electrolytes (Potassium, Sodium) & Renal Function"
+    ]
+  },
+  {
+    "id": "missing_test_037",
+    "category": "missing_test",
+    "raw_text": "Prescribe Lisinopril 10mg oral once daily for hypertension.",
+    "diagnosis_hint": "hypertension",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "lisinopril",
+        "test": "Serum Creatinine & Potassium",
+        "frequency": "Baseline, 1-2 weeks after initiation, and at every dose titration",
+        "guideline_source": "Hypertension Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:lisinopril:Serum Creatinine & Potassium"
+    ]
+  },
+  {
+    "id": "missing_test_038",
+    "category": "missing_test",
+    "raw_text": "Prescribe Lisinopril 20mg oral once daily for hypertension.",
+    "diagnosis_hint": "hypertension",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "lisinopril",
+        "test": "Serum Creatinine & Potassium",
+        "frequency": "Baseline, 1-2 weeks after initiation, and at every dose titration",
+        "guideline_source": "Hypertension Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:lisinopril:Serum Creatinine & Potassium"
+    ]
+  },
+  {
+    "id": "missing_test_039",
+    "category": "missing_test",
+    "raw_text": "Prescribe Digoxin 0.25mg oral once daily for heart failure.",
+    "diagnosis_hint": "heart failure",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "digoxin",
+        "test": "Serum Digoxin Level, Potassium & Renal Function",
+        "frequency": "Baseline, 1-2 weeks after initiation/dose change, then periodically",
+        "guideline_source": "Digoxin Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:digoxin:Serum Digoxin Level, Potassium & Renal Function"
+    ]
+  },
+  {
+    "id": "missing_test_040",
+    "category": "missing_test",
+    "raw_text": "Prescribe Digoxin 0.125mg oral once daily for heart failure.",
+    "diagnosis_hint": "heart failure",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "digoxin",
+        "test": "Serum Digoxin Level, Potassium & Renal Function",
+        "frequency": "Baseline, 1-2 weeks after initiation/dose change, then periodically",
+        "guideline_source": "Digoxin Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:digoxin:Serum Digoxin Level, Potassium & Renal Function"
+    ]
+  },
+  {
+    "id": "missing_test_041",
+    "category": "missing_test",
+    "raw_text": "Prescribe Levothyroxine 100mcg oral once daily for hypothyroidism.",
+    "diagnosis_hint": "hypothyroidism",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "levothyroxine",
+        "test": "TSH",
+        "frequency": "Baseline, every 6-8 weeks until stable, then annually",
+        "guideline_source": "Levothyroxine Therapy for Hypothyroidism Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:levothyroxine:TSH"
+    ]
+  },
+  {
+    "id": "missing_test_042",
+    "category": "missing_test",
+    "raw_text": "Prescribe Levothyroxine 50mcg oral once daily for hypothyroidism.",
+    "diagnosis_hint": "hypothyroidism",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "levothyroxine",
+        "test": "TSH",
+        "frequency": "Baseline, every 6-8 weeks until stable, then annually",
+        "guideline_source": "Levothyroxine Therapy for Hypothyroidism Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:levothyroxine:TSH"
+    ]
+  },
+  {
+    "id": "missing_test_043",
+    "category": "missing_test",
+    "raw_text": "Prescribe Clopidogrel 75mg oral once daily for coronary artery disease.",
+    "diagnosis_hint": "coronary artery disease",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "clopidogrel",
+        "test": "CBC",
+        "frequency": "Periodically during prolonged dual antiplatelet therapy",
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:clopidogrel:CBC"
+    ]
+  },
+  {
+    "id": "missing_test_044",
+    "category": "missing_test",
+    "raw_text": "Prescribe Clopidogrel 150mg oral once daily for coronary artery disease.",
+    "diagnosis_hint": "coronary artery disease",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "clopidogrel",
+        "test": "CBC",
+        "frequency": "Periodically during prolonged dual antiplatelet therapy",
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:clopidogrel:CBC"
+    ]
+  },
+  {
+    "id": "missing_test_045",
+    "category": "missing_test",
+    "raw_text": "Prescribe Insulin 10mg oral once daily for type 2 diabetes.",
+    "diagnosis_hint": "type 2 diabetes",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "insulin",
+        "test": "Blood Glucose",
+        "frequency": "Before meals and at bedtime during initiation/titration",
+        "guideline_source": "Insulin Therapy for Diabetes Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "insulin",
+        "test": "HbA1c",
+        "frequency": "Every 3 months until stable",
+        "guideline_source": "Insulin Therapy for Diabetes Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:insulin:Blood Glucose",
+      "monitoring:insulin:HbA1c"
+    ]
+  },
+  {
+    "id": "missing_test_046",
+    "category": "missing_test",
+    "raw_text": "Prescribe Insulin 20mg oral once daily for type 2 diabetes.",
+    "diagnosis_hint": "type 2 diabetes",
+    "ordered_tests": [
+      "Blood Glucose"
+    ],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "insulin",
+        "test": "HbA1c",
+        "frequency": "Every 3 months until stable",
+        "guideline_source": "Insulin Therapy for Diabetes Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:insulin:HbA1c"
+    ]
+  },
+  {
+    "id": "missing_test_047",
+    "category": "missing_test",
+    "raw_text": "Prescribe Insulin 10mg oral once daily for type 2 diabetes.",
+    "diagnosis_hint": "type 2 diabetes",
+    "ordered_tests": [
+      "HbA1c"
+    ],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "insulin",
+        "test": "Blood Glucose",
+        "frequency": "Before meals and at bedtime during initiation/titration",
+        "guideline_source": "Insulin Therapy for Diabetes Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:insulin:Blood Glucose"
+    ]
+  },
+  {
+    "id": "missing_test_048",
+    "category": "missing_test",
+    "raw_text": "Prescribe Losartan 50mg oral once daily for hypertension.",
+    "diagnosis_hint": "hypertension",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "losartan",
+        "test": "Serum Creatinine & Potassium",
+        "frequency": "Baseline and within 1-2 weeks of initiation or dose titration",
+        "guideline_source": "Losartan (ARB) Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:losartan:Serum Creatinine & Potassium"
+    ]
+  },
+  {
+    "id": "missing_test_049",
+    "category": "missing_test",
+    "raw_text": "Prescribe Losartan 100mg oral once daily for hypertension.",
+    "diagnosis_hint": "hypertension",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "losartan",
+        "test": "Serum Creatinine & Potassium",
+        "frequency": "Baseline and within 1-2 weeks of initiation or dose titration",
+        "guideline_source": "Losartan (ARB) Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:losartan:Serum Creatinine & Potassium"
+    ]
+  },
+  {
+    "id": "missing_test_050",
+    "category": "missing_test",
     "raw_text": "Prescribe Prednisone 10mg oral once daily for rheumatoid arthritis.",
     "diagnosis_hint": "rheumatoid arthritis",
     "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "prednisone",
+        "test": "Blood Glucose & Blood Pressure",
+        "frequency": "Periodically during therapy",
+        "guideline_source": "Prednisone Corticosteroid Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "monitoring:prednisone:Blood Glucose & Blood Pressure"
     ]
   },
   {
-    "id": "drug_drug_029",
+    "id": "drug_drug_051",
     "category": "drug_drug",
-    "raw_text": "Patient on Warfarin 5mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily.",
+    "raw_text": "Patient on Warfarin 5mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily for atrial fibrillation.",
     "diagnosis_hint": "atrial fibrillation",
     "ordered_tests": [
       "INR"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "warfarin",
+          "ibuprofen"
+        ],
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:warfarin+ibuprofen"
     ]
   },
   {
-    "id": "drug_drug_030",
+    "id": "drug_drug_052",
     "category": "drug_drug",
-    "raw_text": "Patient on Warfarin 5mg oral once daily is additionally prescribed Amoxicillin 500mg oral three times daily.",
+    "raw_text": "Prescribe combination therapy: Ibuprofen 600mg oral three times daily co-administered with Warfarin 2.5mg oral once daily for atrial fibrillation.",
     "diagnosis_hint": "atrial fibrillation",
     "ordered_tests": [
       "INR"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "warfarin",
+          "ibuprofen"
+        ],
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:warfarin+ibuprofen"
     ]
   },
   {
-    "id": "drug_drug_031",
+    "id": "drug_drug_053",
     "category": "drug_drug",
-    "raw_text": "Patient on Methotrexate 10mg oral once weekly is additionally prescribed Ibuprofen 400mg oral three times daily.",
+    "raw_text": "Patient on Warfarin 5mg oral once daily is additionally prescribed Amoxicillin 500mg oral three times daily for atrial fibrillation.",
+    "diagnosis_hint": "atrial fibrillation",
+    "ordered_tests": [
+      "INR"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "warfarin",
+          "amoxicillin"
+        ],
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:warfarin+amoxicillin"
+    ]
+  },
+  {
+    "id": "drug_drug_054",
+    "category": "drug_drug",
+    "raw_text": "Prescribe combination therapy: Amoxicillin 250mg oral three times daily co-administered with Warfarin 2.5mg oral once daily for atrial fibrillation.",
+    "diagnosis_hint": "atrial fibrillation",
+    "ordered_tests": [
+      "INR"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "warfarin",
+          "amoxicillin"
+        ],
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:warfarin+amoxicillin"
+    ]
+  },
+  {
+    "id": "drug_drug_055",
+    "category": "drug_drug",
+    "raw_text": "Patient on Methotrexate 10mg oral once weekly is additionally prescribed Ibuprofen 400mg oral three times daily for rheumatoid arthritis.",
     "diagnosis_hint": "rheumatoid arthritis",
     "ordered_tests": [
       "CBC",
       "LFT"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "methotrexate",
+          "ibuprofen"
+        ],
+        "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:methotrexate+ibuprofen"
     ]
   },
   {
-    "id": "drug_drug_032",
+    "id": "drug_drug_056",
     "category": "drug_drug",
-    "raw_text": "Patient on Lisinopril 10mg oral once daily is additionally prescribed Furosemide 40mg oral once daily.",
+    "raw_text": "Prescribe combination therapy: Ibuprofen 600mg oral three times daily co-administered with Methotrexate 15mg oral once weekly for rheumatoid arthritis.",
+    "diagnosis_hint": "rheumatoid arthritis",
+    "ordered_tests": [
+      "CBC",
+      "LFT"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "methotrexate",
+          "ibuprofen"
+        ],
+        "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:methotrexate+ibuprofen"
+    ]
+  },
+  {
+    "id": "drug_drug_057",
+    "category": "drug_drug",
+    "raw_text": "Patient on Lisinopril 10mg oral once daily is additionally prescribed Furosemide 40mg oral once daily for hypertension.",
     "diagnosis_hint": "hypertension",
     "ordered_tests": [
       "Serum Creatinine & Potassium",
       "Serum Electrolytes (Potassium, Sodium) & Renal Function"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "low",
+        "drugs": [
+          "lisinopril",
+          "furosemide"
+        ],
+        "guideline_source": "Diuretic Management in Heart Failure Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:lisinopril+furosemide"
     ]
   },
   {
-    "id": "drug_drug_033",
+    "id": "drug_drug_058",
     "category": "drug_drug",
-    "raw_text": "Patient on Digoxin 0.25mg oral once daily is additionally prescribed Furosemide 40mg oral once daily.",
+    "raw_text": "Prescribe combination therapy: Furosemide 20mg oral once daily co-administered with Lisinopril 20mg oral once daily for hypertension.",
+    "diagnosis_hint": "hypertension",
+    "ordered_tests": [
+      "Serum Creatinine & Potassium",
+      "Serum Electrolytes (Potassium, Sodium) & Renal Function"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "low",
+        "drugs": [
+          "lisinopril",
+          "furosemide"
+        ],
+        "guideline_source": "Diuretic Management in Heart Failure Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:lisinopril+furosemide"
+    ]
+  },
+  {
+    "id": "drug_drug_059",
+    "category": "drug_drug",
+    "raw_text": "Patient on Digoxin 0.25mg oral once daily is additionally prescribed Furosemide 40mg oral once daily for heart failure.",
     "diagnosis_hint": "heart failure",
     "ordered_tests": [
       "Serum Digoxin Level, Potassium & Renal Function",
       "Serum Electrolytes (Potassium, Sodium) & Renal Function"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "digoxin",
+          "furosemide"
+        ],
+        "guideline_source": "Digoxin Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:digoxin+furosemide"
     ]
   },
   {
-    "id": "drug_drug_034",
+    "id": "drug_drug_060",
     "category": "drug_drug",
-    "raw_text": "Patient on Clopidogrel 75mg oral once daily is additionally prescribed Omeprazole 20mg oral once daily.",
+    "raw_text": "Prescribe combination therapy: Furosemide 20mg oral once daily co-administered with Digoxin 0.125mg oral once daily for heart failure.",
+    "diagnosis_hint": "heart failure",
+    "ordered_tests": [
+      "Serum Digoxin Level, Potassium & Renal Function",
+      "Serum Electrolytes (Potassium, Sodium) & Renal Function"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "digoxin",
+          "furosemide"
+        ],
+        "guideline_source": "Digoxin Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:digoxin+furosemide"
+    ]
+  },
+  {
+    "id": "drug_drug_061",
+    "category": "drug_drug",
+    "raw_text": "Patient on Clopidogrel 75mg oral once daily is additionally prescribed Omeprazole 20mg oral once daily for coronary artery disease.",
     "diagnosis_hint": "coronary artery disease",
     "ordered_tests": [
       "CBC"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "clopidogrel",
+          "omeprazole"
+        ],
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:clopidogrel+omeprazole"
     ]
   },
   {
-    "id": "drug_drug_035",
+    "id": "drug_drug_062",
     "category": "drug_drug",
-    "raw_text": "Patient on Clopidogrel 75mg oral once daily is additionally prescribed Warfarin 5mg oral once daily.",
+    "raw_text": "Prescribe combination therapy: Omeprazole 40mg oral once daily co-administered with Clopidogrel 150mg oral once daily for coronary artery disease.",
+    "diagnosis_hint": "coronary artery disease",
+    "ordered_tests": [
+      "CBC"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "clopidogrel",
+          "omeprazole"
+        ],
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:clopidogrel+omeprazole"
+    ]
+  },
+  {
+    "id": "drug_drug_063",
+    "category": "drug_drug",
+    "raw_text": "Patient on Clopidogrel 75mg oral once daily is additionally prescribed Warfarin 5mg oral once daily for coronary artery disease.",
     "diagnosis_hint": "coronary artery disease",
     "ordered_tests": [
       "CBC",
       "INR"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "clopidogrel",
+          "warfarin"
+        ],
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:clopidogrel+warfarin"
     ]
   },
   {
-    "id": "drug_drug_036",
+    "id": "drug_drug_064",
     "category": "drug_drug",
-    "raw_text": "Patient on Clopidogrel 75mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily.",
+    "raw_text": "Prescribe combination therapy: Warfarin 2.5mg oral once daily co-administered with Clopidogrel 150mg oral once daily for coronary artery disease.",
+    "diagnosis_hint": "coronary artery disease",
+    "ordered_tests": [
+      "CBC",
+      "INR"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "clopidogrel",
+          "warfarin"
+        ],
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:clopidogrel+warfarin"
+    ]
+  },
+  {
+    "id": "drug_drug_065",
+    "category": "drug_drug",
+    "raw_text": "Patient on Clopidogrel 75mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily for coronary artery disease.",
     "diagnosis_hint": "coronary artery disease",
     "ordered_tests": [
       "CBC"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "clopidogrel",
+          "ibuprofen"
+        ],
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:clopidogrel+ibuprofen"
     ]
   },
   {
-    "id": "drug_drug_037",
+    "id": "drug_drug_066",
     "category": "drug_drug",
-    "raw_text": "Patient on Prednisone 10mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily.",
+    "raw_text": "Prescribe combination therapy: Ibuprofen 600mg oral three times daily co-administered with Clopidogrel 150mg oral once daily for coronary artery disease.",
+    "diagnosis_hint": "coronary artery disease",
+    "ordered_tests": [
+      "CBC"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "clopidogrel",
+          "ibuprofen"
+        ],
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:clopidogrel+ibuprofen"
+    ]
+  },
+  {
+    "id": "drug_drug_067",
+    "category": "drug_drug",
+    "raw_text": "Patient on Prednisone 10mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily for rheumatoid arthritis.",
     "diagnosis_hint": "rheumatoid arthritis",
     "ordered_tests": [
       "Blood Glucose & Blood Pressure"
     ],
-    "expected_violation_types": [
-      "drug-drug interaction"
-    ]
-  },
-  {
-    "id": "drug_drug_038",
-    "category": "drug_drug",
-    "raw_text": "Patient on Lisinopril 10mg oral once daily is additionally prescribed Losartan 50mg oral once daily.",
-    "diagnosis_hint": "hypertension",
-    "ordered_tests": [
-      "Serum Creatinine & Potassium",
-      "Serum Creatinine & Potassium"
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "prednisone",
+          "ibuprofen"
+        ],
+        "guideline_source": "Prednisone Corticosteroid Therapy Guideline"
+      }
     ],
     "expected_violation_types": [
       "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:prednisone+ibuprofen"
     ]
   },
   {
-    "id": "drug_diagnosis_039",
+    "id": "drug_drug_068",
+    "category": "drug_drug",
+    "raw_text": "Prescribe combination therapy: Ibuprofen 600mg oral three times daily co-administered with Prednisone 20mg oral once daily for rheumatoid arthritis.",
+    "diagnosis_hint": "rheumatoid arthritis",
+    "ordered_tests": [
+      "Blood Glucose & Blood Pressure"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "prednisone",
+          "ibuprofen"
+        ],
+        "guideline_source": "Prednisone Corticosteroid Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:prednisone+ibuprofen"
+    ]
+  },
+  {
+    "id": "drug_drug_069",
+    "category": "drug_drug",
+    "raw_text": "Patient on Lisinopril 10mg oral once daily is additionally prescribed Losartan 50mg oral once daily for hypertension.",
+    "diagnosis_hint": "hypertension",
+    "ordered_tests": [
+      "Serum Creatinine & Potassium"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "lisinopril",
+          "losartan"
+        ],
+        "guideline_source": "Losartan (ARB) Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:lisinopril+losartan"
+    ]
+  },
+  {
+    "id": "drug_drug_070",
+    "category": "drug_drug",
+    "raw_text": "Prescribe combination therapy: Losartan 100mg oral once daily co-administered with Lisinopril 20mg oral once daily for hypertension.",
+    "diagnosis_hint": "hypertension",
+    "ordered_tests": [
+      "Serum Creatinine & Potassium"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "lisinopril",
+          "losartan"
+        ],
+        "guideline_source": "Losartan (ARB) Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction"
+    ],
+    "relevant_rules": [
+      "drug_drug:lisinopril+losartan"
+    ]
+  },
+  {
+    "id": "drug_diagnosis_071",
     "category": "drug_diagnosis",
-    "raw_text": "Prescribe Metformin 500mg oral twice daily.",
+    "raw_text": "Prescribe Metformin 500mg oral twice daily for patient diagnosed with renal impairment.",
     "diagnosis_hint": "renal impairment",
     "ordered_tests": [
       "eGFR / Serum Creatinine"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "metformin",
+        "diagnosis": "renal impairment",
+        "guideline_source": "Type 2 Diabetes Management Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:metformin->renal impairment"
     ]
   },
   {
-    "id": "drug_diagnosis_040",
+    "id": "drug_diagnosis_072",
     "category": "drug_diagnosis",
-    "raw_text": "Prescribe Lisinopril 10mg oral once daily.",
+    "raw_text": "Patient with underlying renal impairment presents for therapy. Prescribe Metformin 1000mg oral twice daily.",
+    "diagnosis_hint": "renal impairment",
+    "ordered_tests": [
+      "eGFR / Serum Creatinine"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "metformin",
+        "diagnosis": "renal impairment",
+        "guideline_source": "Type 2 Diabetes Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:metformin->renal impairment"
+    ]
+  },
+  {
+    "id": "drug_diagnosis_073",
+    "category": "drug_diagnosis",
+    "raw_text": "Prescribe Metformin 850mg oral once daily. Patient medical history positive for renal impairment.",
+    "diagnosis_hint": "renal impairment",
+    "ordered_tests": [
+      "eGFR / Serum Creatinine"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "metformin",
+        "diagnosis": "renal impairment",
+        "guideline_source": "Type 2 Diabetes Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:metformin->renal impairment"
+    ]
+  },
+  {
+    "id": "drug_diagnosis_074",
+    "category": "drug_diagnosis",
+    "raw_text": "Prescribe Lisinopril 10mg oral once daily for patient diagnosed with pregnancy.",
     "diagnosis_hint": "pregnancy",
     "ordered_tests": [
       "Serum Creatinine & Potassium"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "lisinopril",
+        "diagnosis": "pregnancy",
+        "guideline_source": "Hypertension Management Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:lisinopril->pregnancy"
     ]
   },
   {
-    "id": "drug_diagnosis_041",
+    "id": "drug_diagnosis_075",
     "category": "drug_diagnosis",
-    "raw_text": "Prescribe Losartan 50mg oral once daily.",
+    "raw_text": "Patient with underlying pregnancy presents for therapy. Prescribe Lisinopril 20mg oral once daily.",
     "diagnosis_hint": "pregnancy",
     "ordered_tests": [
       "Serum Creatinine & Potassium"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "lisinopril",
+        "diagnosis": "pregnancy",
+        "guideline_source": "Hypertension Management Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:lisinopril->pregnancy"
     ]
   },
   {
-    "id": "drug_diagnosis_042",
+    "id": "drug_diagnosis_076",
     "category": "drug_diagnosis",
-    "raw_text": "Prescribe Ibuprofen 400mg oral three times daily.",
+    "raw_text": "Prescribe Lisinopril 5mg oral once daily. Patient medical history positive for pregnancy.",
+    "diagnosis_hint": "pregnancy",
+    "ordered_tests": [
+      "Serum Creatinine & Potassium"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "lisinopril",
+        "diagnosis": "pregnancy",
+        "guideline_source": "Hypertension Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:lisinopril->pregnancy"
+    ]
+  },
+  {
+    "id": "drug_diagnosis_077",
+    "category": "drug_diagnosis",
+    "raw_text": "Prescribe Losartan 50mg oral once daily for patient diagnosed with pregnancy.",
+    "diagnosis_hint": "pregnancy",
+    "ordered_tests": [
+      "Serum Creatinine & Potassium"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "losartan",
+        "diagnosis": "pregnancy",
+        "guideline_source": "Losartan (ARB) Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:losartan->pregnancy"
+    ]
+  },
+  {
+    "id": "drug_diagnosis_078",
+    "category": "drug_diagnosis",
+    "raw_text": "Patient with underlying pregnancy presents for therapy. Prescribe Losartan 100mg oral once daily.",
+    "diagnosis_hint": "pregnancy",
+    "ordered_tests": [
+      "Serum Creatinine & Potassium"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "losartan",
+        "diagnosis": "pregnancy",
+        "guideline_source": "Losartan (ARB) Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:losartan->pregnancy"
+    ]
+  },
+  {
+    "id": "drug_diagnosis_079",
+    "category": "drug_diagnosis",
+    "raw_text": "Prescribe Losartan 25mg oral once daily. Patient medical history positive for pregnancy.",
+    "diagnosis_hint": "pregnancy",
+    "ordered_tests": [
+      "Serum Creatinine & Potassium"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "losartan",
+        "diagnosis": "pregnancy",
+        "guideline_source": "Losartan (ARB) Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:losartan->pregnancy"
+    ]
+  },
+  {
+    "id": "drug_diagnosis_080",
+    "category": "drug_diagnosis",
+    "raw_text": "Prescribe Ibuprofen 400mg oral three times daily for patient diagnosed with peptic ulcer disease.",
     "diagnosis_hint": "peptic ulcer disease",
     "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "medium",
+        "drug": "ibuprofen",
+        "diagnosis": "peptic ulcer disease",
+        "guideline_source": "General Prescribing Safety Guidance"
+      }
+    ],
     "expected_violation_types": [
       "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:ibuprofen->peptic ulcer disease"
     ]
   },
   {
-    "id": "drug_diagnosis_043",
+    "id": "drug_diagnosis_081",
     "category": "drug_diagnosis",
-    "raw_text": "Prescribe Digoxin 0.25mg oral once daily.",
+    "raw_text": "Patient with underlying peptic ulcer disease presents for therapy. Prescribe Ibuprofen 600mg oral three times daily.",
+    "diagnosis_hint": "peptic ulcer disease",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "medium",
+        "drug": "ibuprofen",
+        "diagnosis": "peptic ulcer disease",
+        "guideline_source": "General Prescribing Safety Guidance"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:ibuprofen->peptic ulcer disease"
+    ]
+  },
+  {
+    "id": "drug_diagnosis_082",
+    "category": "drug_diagnosis",
+    "raw_text": "Prescribe Ibuprofen 200mg oral as needed. Patient medical history positive for peptic ulcer disease.",
+    "diagnosis_hint": "peptic ulcer disease",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "medium",
+        "drug": "ibuprofen",
+        "diagnosis": "peptic ulcer disease",
+        "guideline_source": "General Prescribing Safety Guidance"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:ibuprofen->peptic ulcer disease"
+    ]
+  },
+  {
+    "id": "drug_diagnosis_083",
+    "category": "drug_diagnosis",
+    "raw_text": "Prescribe Digoxin 0.25mg oral once daily for patient diagnosed with renal impairment.",
     "diagnosis_hint": "renal impairment",
     "ordered_tests": [
       "Serum Digoxin Level, Potassium & Renal Function"
     ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "digoxin",
+        "diagnosis": "renal impairment",
+        "guideline_source": "Digoxin Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:digoxin->renal impairment"
     ]
   },
   {
-    "id": "multiple_044",
+    "id": "drug_diagnosis_084",
+    "category": "drug_diagnosis",
+    "raw_text": "Patient with underlying renal impairment presents for therapy. Prescribe Digoxin 0.125mg oral once daily.",
+    "diagnosis_hint": "renal impairment",
+    "ordered_tests": [
+      "Serum Digoxin Level, Potassium & Renal Function"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "digoxin",
+        "diagnosis": "renal impairment",
+        "guideline_source": "Digoxin Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:digoxin->renal impairment"
+    ]
+  },
+  {
+    "id": "drug_diagnosis_085",
+    "category": "drug_diagnosis",
+    "raw_text": "Prescribe Digoxin 0.25mg oral once daily. Patient medical history positive for renal impairment.",
+    "diagnosis_hint": "renal impairment",
+    "ordered_tests": [
+      "Serum Digoxin Level, Potassium & Renal Function"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "digoxin",
+        "diagnosis": "renal impairment",
+        "guideline_source": "Digoxin Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:digoxin->renal impairment"
+    ]
+  },
+  {
+    "id": "multiple_086",
     "category": "multiple",
-    "raw_text": "Patient on Warfarin 5mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily.",
+    "raw_text": "Patient diagnosed with atrial fibrillation is prescribed Warfarin 5mg oral once daily together with Ibuprofen 400mg oral three times daily.",
     "diagnosis_hint": "atrial fibrillation",
     "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "warfarin",
+          "ibuprofen"
+        ],
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "warfarin",
+        "test": "INR",
+        "frequency": "Every 2-3 days during initiation, then weekly until stable, then monthly",
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction",
       "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_drug:warfarin+ibuprofen",
+      "monitoring:warfarin:INR"
     ]
   },
   {
-    "id": "multiple_045",
+    "id": "multiple_087",
     "category": "multiple",
-    "raw_text": "Patient on Warfarin 5mg oral once daily is additionally prescribed Amoxicillin 500mg oral three times daily.",
-    "diagnosis_hint": "atrial fibrillation",
+    "raw_text": "Patient diagnosed with coronary artery disease is prescribed Warfarin 5mg oral once daily together with Amoxicillin 500mg oral three times daily.",
+    "diagnosis_hint": "coronary artery disease",
     "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "warfarin",
+          "amoxicillin"
+        ],
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "warfarin",
+        "test": "INR",
+        "frequency": "Every 2-3 days during initiation, then weekly until stable, then monthly",
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction",
       "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_drug:warfarin+amoxicillin",
+      "monitoring:warfarin:INR"
     ]
   },
   {
-    "id": "multiple_046",
+    "id": "multiple_088",
     "category": "multiple",
-    "raw_text": "Patient on Methotrexate 10mg oral once weekly is additionally prescribed Ibuprofen 400mg oral three times daily.",
+    "raw_text": "Patient diagnosed with rheumatoid arthritis is prescribed Methotrexate 10mg oral once weekly together with Ibuprofen 400mg oral three times daily.",
     "diagnosis_hint": "rheumatoid arthritis",
     "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "methotrexate",
+          "ibuprofen"
+        ],
+        "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "methotrexate",
+        "test": "CBC",
+        "frequency": "Baseline, every 2-4 weeks for 3 months, then every 8-12 weeks",
+        "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "methotrexate",
+        "test": "LFT",
+        "frequency": "Baseline, every 2-4 weeks for 3 months, then every 8-12 weeks",
+        "guideline_source": "Methotrexate Therapy for Rheumatoid Arthritis Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction",
       "missing monitoring test",
       "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_drug:methotrexate+ibuprofen",
+      "monitoring:methotrexate:CBC",
+      "monitoring:methotrexate:LFT"
     ]
   },
   {
-    "id": "multiple_047",
+    "id": "multiple_089",
     "category": "multiple",
-    "raw_text": "Patient on Lisinopril 10mg oral once daily is additionally prescribed Furosemide 40mg oral once daily.",
-    "diagnosis_hint": "hypertension",
-    "ordered_tests": [],
-    "expected_violation_types": [
-      "drug-drug interaction",
-      "missing monitoring test",
-      "missing monitoring test"
-    ]
-  },
-  {
-    "id": "multiple_048",
-    "category": "multiple",
-    "raw_text": "Patient on Digoxin 0.25mg oral once daily is additionally prescribed Furosemide 40mg oral once daily.",
+    "raw_text": "Patient diagnosed with heart failure is prescribed Lisinopril 10mg oral once daily together with Furosemide 40mg oral once daily.",
     "diagnosis_hint": "heart failure",
     "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "low",
+        "drugs": [
+          "lisinopril",
+          "furosemide"
+        ],
+        "guideline_source": "Diuretic Management in Heart Failure Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "lisinopril",
+        "test": "Serum Creatinine & Potassium",
+        "frequency": "Baseline, 1-2 weeks after initiation, and at every dose titration",
+        "guideline_source": "Hypertension Management Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "furosemide",
+        "test": "Serum Electrolytes (Potassium, Sodium) & Renal Function",
+        "frequency": "Baseline, 1-2 weeks after initiation/dose change, then periodically",
+        "guideline_source": "Diuretic Management in Heart Failure Guideline"
+      }
+    ],
     "expected_violation_types": [
       "drug-drug interaction",
       "missing monitoring test",
       "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_drug:lisinopril+furosemide",
+      "monitoring:lisinopril:Serum Creatinine & Potassium",
+      "monitoring:furosemide:Serum Electrolytes (Potassium, Sodium) & Renal Function"
+    ]
+  },
+  {
+    "id": "multiple_090",
+    "category": "multiple",
+    "raw_text": "Patient diagnosed with heart failure is prescribed Digoxin 0.25mg oral once daily together with Furosemide 40mg oral once daily.",
+    "diagnosis_hint": "heart failure",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "digoxin",
+          "furosemide"
+        ],
+        "guideline_source": "Digoxin Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "digoxin",
+        "test": "Serum Digoxin Level, Potassium & Renal Function",
+        "frequency": "Baseline, 1-2 weeks after initiation/dose change, then periodically",
+        "guideline_source": "Digoxin Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "furosemide",
+        "test": "Serum Electrolytes (Potassium, Sodium) & Renal Function",
+        "frequency": "Baseline, 1-2 weeks after initiation/dose change, then periodically",
+        "guideline_source": "Diuretic Management in Heart Failure Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction",
+      "missing monitoring test",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_drug:digoxin+furosemide",
+      "monitoring:digoxin:Serum Digoxin Level, Potassium & Renal Function",
+      "monitoring:furosemide:Serum Electrolytes (Potassium, Sodium) & Renal Function"
+    ]
+  },
+  {
+    "id": "multiple_091",
+    "category": "multiple",
+    "raw_text": "Patient diagnosed with coronary artery disease is prescribed Clopidogrel 75mg oral once daily together with Omeprazole 20mg oral once daily.",
+    "diagnosis_hint": "coronary artery disease",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "clopidogrel",
+          "omeprazole"
+        ],
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "clopidogrel",
+        "test": "CBC",
+        "frequency": "Periodically during prolonged dual antiplatelet therapy",
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_drug:clopidogrel+omeprazole",
+      "monitoring:clopidogrel:CBC"
+    ]
+  },
+  {
+    "id": "multiple_092",
+    "category": "multiple",
+    "raw_text": "Patient diagnosed with atrial fibrillation is prescribed Clopidogrel 75mg oral once daily together with Warfarin 5mg oral once daily.",
+    "diagnosis_hint": "atrial fibrillation",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "clopidogrel",
+          "warfarin"
+        ],
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "clopidogrel",
+        "test": "CBC",
+        "frequency": "Periodically during prolonged dual antiplatelet therapy",
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "warfarin",
+        "test": "INR",
+        "frequency": "Every 2-3 days during initiation, then weekly until stable, then monthly",
+        "guideline_source": "Warfarin Anticoagulation Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction",
+      "missing monitoring test",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_drug:clopidogrel+warfarin",
+      "monitoring:clopidogrel:CBC",
+      "monitoring:warfarin:INR"
+    ]
+  },
+  {
+    "id": "multiple_093",
+    "category": "multiple",
+    "raw_text": "Patient diagnosed with coronary artery disease is prescribed Clopidogrel 75mg oral once daily together with Ibuprofen 400mg oral three times daily.",
+    "diagnosis_hint": "coronary artery disease",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "clopidogrel",
+          "ibuprofen"
+        ],
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "clopidogrel",
+        "test": "CBC",
+        "frequency": "Periodically during prolonged dual antiplatelet therapy",
+        "guideline_source": "Clopidogrel Antiplatelet Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_drug:clopidogrel+ibuprofen",
+      "monitoring:clopidogrel:CBC"
+    ]
+  },
+  {
+    "id": "multiple_094",
+    "category": "multiple",
+    "raw_text": "Patient diagnosed with rheumatoid arthritis is prescribed Prednisone 10mg oral once daily together with Ibuprofen 400mg oral three times daily.",
+    "diagnosis_hint": "rheumatoid arthritis",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "prednisone",
+          "ibuprofen"
+        ],
+        "guideline_source": "Prednisone Corticosteroid Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "prednisone",
+        "test": "Blood Glucose & Blood Pressure",
+        "frequency": "Periodically during therapy",
+        "guideline_source": "Prednisone Corticosteroid Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_drug:prednisone+ibuprofen",
+      "monitoring:prednisone:Blood Glucose & Blood Pressure"
+    ]
+  },
+  {
+    "id": "multiple_095",
+    "category": "multiple",
+    "raw_text": "Patient diagnosed with hypertension is prescribed Lisinopril 10mg oral once daily together with Losartan 50mg oral once daily.",
+    "diagnosis_hint": "hypertension",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "medium",
+        "drugs": [
+          "lisinopril",
+          "losartan"
+        ],
+        "guideline_source": "Losartan (ARB) Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "lisinopril",
+        "test": "Serum Creatinine & Potassium",
+        "frequency": "Baseline, 1-2 weeks after initiation, and at every dose titration",
+        "guideline_source": "Hypertension Management Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "losartan",
+        "test": "Serum Creatinine & Potassium",
+        "frequency": "Baseline and within 1-2 weeks of initiation or dose titration",
+        "guideline_source": "Losartan (ARB) Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction",
+      "missing monitoring test",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_drug:lisinopril+losartan",
+      "monitoring:lisinopril:Serum Creatinine & Potassium",
+      "monitoring:losartan:Serum Creatinine & Potassium"
+    ]
+  },
+  {
+    "id": "multiple_096",
+    "category": "multiple",
+    "raw_text": "Prescribe Metformin 500mg oral twice daily for patient with documented renal impairment.",
+    "diagnosis_hint": "renal impairment",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "metformin",
+        "diagnosis": "renal impairment",
+        "guideline_source": "Type 2 Diabetes Management Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "metformin",
+        "test": "eGFR / Serum Creatinine",
+        "frequency": "Baseline and at least annually (every 3-6 months if reduced renal function)",
+        "guideline_source": "Type 2 Diabetes Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:metformin->renal impairment",
+      "monitoring:metformin:eGFR / Serum Creatinine"
+    ]
+  },
+  {
+    "id": "multiple_097",
+    "category": "multiple",
+    "raw_text": "Prescribe Lisinopril 10mg oral once daily for patient with documented pregnancy.",
+    "diagnosis_hint": "pregnancy",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "lisinopril",
+        "diagnosis": "pregnancy",
+        "guideline_source": "Hypertension Management Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "lisinopril",
+        "test": "Serum Creatinine & Potassium",
+        "frequency": "Baseline, 1-2 weeks after initiation, and at every dose titration",
+        "guideline_source": "Hypertension Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:lisinopril->pregnancy",
+      "monitoring:lisinopril:Serum Creatinine & Potassium"
+    ]
+  },
+  {
+    "id": "multiple_098",
+    "category": "multiple",
+    "raw_text": "Prescribe Digoxin 0.25mg oral once daily for patient with documented renal impairment.",
+    "diagnosis_hint": "renal impairment",
+    "ordered_tests": [],
+    "expected_violations": [
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "digoxin",
+        "diagnosis": "renal impairment",
+        "guideline_source": "Digoxin Therapy Guideline"
+      },
+      {
+        "type": "missing monitoring test",
+        "severity": "medium",
+        "drug": "digoxin",
+        "test": "Serum Digoxin Level, Potassium & Renal Function",
+        "frequency": "Baseline, 1-2 weeks after initiation/dose change, then periodically",
+        "guideline_source": "Digoxin Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-diagnosis contraindication",
+      "missing monitoring test"
+    ],
+    "relevant_rules": [
+      "drug_diagnosis:digoxin->renal impairment",
+      "monitoring:digoxin:Serum Digoxin Level, Potassium & Renal Function"
+    ]
+  },
+  {
+    "id": "multiple_099",
+    "category": "multiple",
+    "raw_text": "Prescribe Lisinopril 10mg oral once daily and Furosemide 40mg oral once daily for patient with confirmed pregnancy.",
+    "diagnosis_hint": "pregnancy",
+    "ordered_tests": [
+      "Serum Creatinine & Potassium",
+      "Serum Electrolytes (Potassium, Sodium) & Renal Function"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "low",
+        "drugs": [
+          "lisinopril",
+          "furosemide"
+        ],
+        "guideline_source": "Diuretic Management in Heart Failure Guideline"
+      },
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "lisinopril",
+        "diagnosis": "pregnancy",
+        "guideline_source": "Hypertension Management Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction",
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_drug:lisinopril+furosemide",
+      "drug_diagnosis:lisinopril->pregnancy"
+    ]
+  },
+  {
+    "id": "multiple_100",
+    "category": "multiple",
+    "raw_text": "Prescribe Digoxin 0.25mg oral once daily and Furosemide 40mg oral once daily for patient with confirmed renal impairment.",
+    "diagnosis_hint": "renal impairment",
+    "ordered_tests": [
+      "Serum Digoxin Level, Potassium & Renal Function",
+      "Serum Electrolytes (Potassium, Sodium) & Renal Function"
+    ],
+    "expected_violations": [
+      {
+        "type": "drug-drug interaction",
+        "severity": "high",
+        "drugs": [
+          "digoxin",
+          "furosemide"
+        ],
+        "guideline_source": "Digoxin Therapy Guideline"
+      },
+      {
+        "type": "drug-diagnosis contraindication",
+        "severity": "high",
+        "drug": "digoxin",
+        "diagnosis": "renal impairment",
+        "guideline_source": "Digoxin Therapy Guideline"
+      }
+    ],
+    "expected_violation_types": [
+      "drug-drug interaction",
+      "drug-diagnosis contraindication"
+    ],
+    "relevant_rules": [
+      "drug_drug:digoxin+furosemide",
+      "drug_diagnosis:digoxin->renal impairment"
     ]
   }
 ]
