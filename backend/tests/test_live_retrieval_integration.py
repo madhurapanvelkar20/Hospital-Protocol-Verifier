@@ -1,19 +1,11 @@
-"""
-Integration check: with LIVE_FDA_RETRIEVAL_ENABLED on and live_data mocked,
-confirms retrieve_protocol() actually merges live chunks into the result
--- i.e. that the wiring in retriever_agent.py works, not just live_data.py
-in isolation.
-"""
+"""Integration check for merging mocked live FDA chunks into local retrieval."""
+
 import sys
 from pathlib import Path
-from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-import src.config as config
-config.LIVE_FDA_RETRIEVAL_ENABLED = True
-
-from src.agents.retriever_agent import retrieve_protocol
+import src.agents.retriever_agent as retriever_agent
 
 FAKE_LIVE_CHUNK = [{
     "text": "Lactic acidosis is a rare but serious complication of metformin therapy...",
@@ -24,18 +16,27 @@ FAKE_LIVE_CHUNK = [{
     "score": 1.0,
 }]
 
-state = {
-    "raw_text": "Prescribe Metformin 500mg oral twice daily for type 2 diabetes.",
-    "parsed_drugs": [{"name": "metformin", "dose": "500mg", "route": "oral", "frequency": "twice daily"}],
-    "parsed_diagnosis": "type 2 diabetes",
-}
 
-with patch("src.agents.retriever_agent.fetch_fda_label_chunks", return_value=FAKE_LIVE_CHUNK):
-    result = retrieve_protocol(state)
+def test_retriever_merges_live_chunks_ahead_of_local_results(monkeypatch):
+    monkeypatch.setattr(retriever_agent, "LIVE_FDA_RETRIEVAL_ENABLED", True)
+    monkeypatch.setattr(
+        retriever_agent,
+        "fetch_fda_label_chunks",
+        lambda _drug: FAKE_LIVE_CHUNK,
+    )
+    state = {
+        "raw_text": "Prescribe Metformin 500mg oral twice daily for type 2 diabetes.",
+        "parsed_drugs": [{
+            "name": "metformin",
+            "dose": "500mg",
+            "route": "oral",
+            "frequency": "twice daily",
+        }],
+        "parsed_diagnosis": "type 2 diabetes",
+    }
 
-assert result["retrieved_chunks"][0]["source"] == "FDA Structured Product Label (live, via openFDA)", \
-    f"Expected the live chunk to be merged in first, got: {result['retrieved_chunks'][0]}"
-assert result["retrieval_confidence"] == 1.0
-assert len(result["retrieved_chunks"]) > 1, "Expected local corpus chunks still present alongside the live one"
+    result = retriever_agent.retrieve_protocol(state)
 
-print("PASS: retriever_agent correctly merges live FDA chunks ahead of local corpus results when enabled")
+    assert result["retrieved_chunks"][0]["source"] == FAKE_LIVE_CHUNK[0]["source"]
+    assert result["retrieval_confidence"] == 1.0
+    assert len(result["retrieved_chunks"]) > 1

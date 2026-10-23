@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchSamples, verifyPrescription } from "../api.js";
+import { fetchSamples, verifyPrescription, ocrExtractText } from "../api.js";
 import { useAuth } from "../context/AuthContext.jsx";
 import InputPanel from "../components/InputPanel.jsx";
 import ResultBanner from "../components/ResultBanner.jsx";
@@ -17,6 +17,9 @@ export default function Verifier() {
   const [rawText, setRawText] = useState("");
   const [diagnosis, setDiagnosis] = useState("");
   const [orderedTestsText, setOrderedTestsText] = useState("");
+
+  const [ocrStatus, setOcrStatus] = useState("idle"); // idle | loading | done | error
+  const [ocrError, setOcrError] = useState(null);
 
   const [status, setStatus] = useState("idle"); // idle | loading | done
   const [result, setResult] = useState(null);
@@ -44,12 +47,39 @@ export default function Verifier() {
     if (sample) applySample(sample);
   }
 
+  async function handlePhotoSelected(file) {
+    setOcrStatus("loading");
+    setOcrError(null);
+    setRawText("");
+    setDiagnosis("");
+    setOrderedTestsText("");
+    setResult(null);
+    setStatus("idle");
+    try {
+      const data = await ocrExtractText(file, token);
+      const { extracted_text, diagnoses, ordered_tests } = data;
+      setRawText(extracted_text || "");
+      // Always overwrite both fields from THIS image -- including with an empty
+      // value when nothing was found -- so a previously selected sample case
+      // can never leak its diagnosis/tests into a photo prescription.
+      // The user reviews and edits both before verification.
+      setDiagnosis((diagnoses || []).join(", "));
+      setOrderedTestsText((ordered_tests || []).join(", "));
+      setResult(null);
+      setStatus("idle");
+      setOcrStatus("done");
+    } catch (err) {
+      setOcrError(err.message || "Could not read this image.");
+      setOcrStatus("error");
+    }
+  }
+
   async function handleRun() {
     setStatus("loading");
     setError(null);
     try {
       const orderedTests = orderedTestsText
-        .split(",")
+        .split(/,(?![^()]*\))/)
         .map((t) => t.trim())
         .filter(Boolean);
       const data = await verifyPrescription({ rawText, diagnosisHint: diagnosis, orderedTests }, token);
@@ -68,8 +98,8 @@ export default function Verifier() {
           Check a prescription against <span className="hero__accent">hospital protocol</span>
         </h1>
         <p className="hero__subtitle">
-          Enter a prescription and we&rsquo;ll surface interaction risks, missing monitoring tests, and the exact
-          guideline behind every finding.
+          Enter a prescription, or upload a photo of one, and we&rsquo;ll surface interaction risks, missing
+          monitoring tests, and the exact guideline behind every finding.
         </p>
       </div>
 
@@ -87,6 +117,9 @@ export default function Verifier() {
         setOrderedTestsText={setOrderedTestsText}
         onRun={handleRun}
         loading={status === "loading"}
+        onPhotoSelected={handlePhotoSelected}
+        ocrStatus={ocrStatus}
+        ocrError={ocrError}
       />
 
       {error && (
@@ -102,15 +135,38 @@ export default function Verifier() {
       {status === "done" && result && (
         <>
           <EcgDivider label="Result" />
-          <ResultBanner violations={result.violations || []} />
+          <ResultBanner
+            violations={result.violations || []}
+            parsedDrugs={result.parsed_drugs || []}
+            unassessedDrugs={result.unassessed_drugs || []}
+            unassessedDiagnoses={result.unassessed_diagnoses || []}
+            retrievalAvailable={
+              (result.retrieved_chunks || []).length > 0 && (result.retrieval_confidence || 0) >= 0.15
+            }
+          />
 
           <div className="result-grid">
             <div className="result-grid__trace">
-              <ParsedDrugsTable drugs={result.parsed_drugs || []} diagnosis={result.parsed_diagnosis} />
+              <ParsedDrugsTable
+                drugs={result.parsed_drugs || []}
+                diagnosis={result.parsed_diagnoses || result.parsed_diagnosis}
+                unassessedDrugs={result.unassessed_drugs || []}
+                unassessedDiagnoses={result.unassessed_diagnoses || []}
+              />
               <CitationList chunks={result.retrieved_chunks || []} confidence={result.retrieval_confidence || 0} />
             </div>
             <div className="result-grid__report">
-              <ReportPanel violations={result.violations || []} />
+              <ReportPanel
+                violations={result.violations || []}
+                assessmentIncomplete={
+                  !(result.parsed_drugs || []).length ||
+                  (result.unassessed_drugs || []).length > 0 ||
+                  (result.unassessed_diagnoses || []).length > 0 ||
+                  !(result.retrieved_chunks || []).length ||
+                  (result.retrieval_confidence || 0) < 0.15
+                }
+                hasParsedDrugs={(result.parsed_drugs || []).length > 0}
+              />
             </div>
           </div>
         </>

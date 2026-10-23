@@ -41,17 +41,41 @@ function HistoryEntry({ entry }) {
 
       {expanded && (
         <div className="history-entry__detail">
-          <ResultBanner violations={entry.result.violations || []} />
+          <ResultBanner
+            violations={entry.result.violations || []}
+            parsedDrugs={entry.result.parsed_drugs || []}
+            unassessedDrugs={entry.result.unassessed_drugs || []}
+            unassessedDiagnoses={entry.result.unassessed_diagnoses || []}
+            retrievalAvailable={
+              (entry.result.retrieved_chunks || []).length > 0 &&
+              (entry.result.retrieval_confidence || 0) >= 0.15
+            }
+          />
           <div className="result-grid">
             <div className="result-grid__trace">
-              <ParsedDrugsTable drugs={entry.result.parsed_drugs || []} diagnosis={entry.result.parsed_diagnosis} />
+              <ParsedDrugsTable
+                drugs={entry.result.parsed_drugs || []}
+                diagnosis={entry.result.parsed_diagnoses || entry.result.parsed_diagnosis}
+                unassessedDrugs={entry.result.unassessed_drugs || []}
+                unassessedDiagnoses={entry.result.unassessed_diagnoses || []}
+              />
               <CitationList
                 chunks={entry.result.retrieved_chunks || []}
                 confidence={entry.result.retrieval_confidence || 0}
               />
             </div>
             <div className="result-grid__report">
-              <ReportPanel violations={entry.result.violations || []} />
+              <ReportPanel
+                violations={entry.result.violations || []}
+                assessmentIncomplete={
+                  !(entry.result.parsed_drugs || []).length ||
+                  (entry.result.unassessed_drugs || []).length > 0 ||
+                  (entry.result.unassessed_diagnoses || []).length > 0 ||
+                  !(entry.result.retrieved_chunks || []).length ||
+                  (entry.result.retrieval_confidence || 0) < 0.15
+                }
+                hasParsedDrugs={(entry.result.parsed_drugs || []).length > 0}
+              />
             </div>
           </div>
         </div>

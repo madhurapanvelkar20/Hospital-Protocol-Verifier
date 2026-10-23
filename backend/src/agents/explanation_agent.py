@@ -76,6 +76,12 @@ def _template_report(state: VerifierState, violations: List[Dict[str, Any]]) -> 
     lines = []
     confidence = state.get("retrieval_confidence", 0.0)
     attempts = state.get("retrieval_attempts", 1)
+    unassessed_drugs = state.get("unassessed_drugs", [])
+    unassessed_diagnoses = state.get("unassessed_diagnoses", [])
+    retrieval_available = (
+        bool(state.get("retrieved_chunks"))
+        and state.get("retrieval_confidence", 0.0) >= 0.15
+    )
 
     lines.append("## Retrieved Protocol Reference")
     if attempts > 1:
@@ -84,9 +90,30 @@ def _template_report(state: VerifierState, violations: List[Dict[str, Any]]) -> 
     lines.append("")
 
     if not violations:
-        lines.append("## Result: No violations detected")
-        lines.append("The prescription appears consistent with the retrieved protocol, "
-                      "no flagged drug interactions, and no missing required monitoring tests.")
+        if not state.get("parsed_drugs"):
+            lines.append("## Result: Assessment incomplete")
+            lines.append(
+                "No medicines were extracted, so medication checks were not performed. "
+                "Review and correct the prescription text before relying on this result."
+            )
+        elif unassessed_drugs or unassessed_diagnoses or not retrieval_available:
+            lines.append("## Result: No configured violations detected; assessment incomplete")
+            lines.append(
+                "Only configured rules were evaluated. No finding does not establish that "
+                "the prescription is safe."
+            )
+            if not retrieval_available:
+                lines.append("No relevant protocol guideline was retrieved for this prescription.")
+        else:
+            lines.append("## Result: No configured violations detected")
+            lines.append(
+                "Only configured interaction and monitoring rules were evaluated. "
+                "This result is not proof that the prescription is safe."
+            )
+        if unassessed_drugs:
+            lines.append(f"Not assessed (no applicable configured rules): {', '.join(unassessed_drugs)}.")
+        if unassessed_diagnoses:
+            lines.append(f"Not assessed (diagnosis not recognized): {', '.join(unassessed_diagnoses)}.")
         return "\n".join(lines)
 
     lines.append(f"## Result: {len(violations)} issue(s) flagged")
@@ -97,6 +124,12 @@ def _template_report(state: VerifierState, violations: List[Dict[str, Any]]) -> 
             f"- Recommendation: {v['recommendation']}\n"
             f"- Guideline source: {v['source']}"
         )
+    if unassessed_drugs:
+        lines.append(f"\nNot assessed (no applicable configured rules): {', '.join(unassessed_drugs)}.")
+    if unassessed_diagnoses:
+        lines.append(f"\nNot assessed (diagnosis not recognized): {', '.join(unassessed_diagnoses)}.")
+    if not retrieval_available:
+        lines.append("\nNo relevant protocol guideline was retrieved for this prescription.")
     return "\n".join(lines)
 
 
@@ -133,8 +166,18 @@ def _llm_report(state: VerifierState, violations: List[Dict[str, Any]]) -> str:
 def explain_violations(state: VerifierState) -> Dict[str, Any]:
     """LangGraph node: produces the final violations list and report text."""
     violations = _build_violations(state)
+    retrieval_available = (
+        bool(state.get("retrieved_chunks"))
+        and state.get("retrieval_confidence", 0.0) >= 0.15
+    )
+    assessment_incomplete = (
+        not state.get("parsed_drugs")
+        or bool(state.get("unassessed_drugs"))
+        or bool(state.get("unassessed_diagnoses"))
+        or not retrieval_available
+    )
 
-    if os.environ.get("ANTHROPIC_API_KEY"):
+    if os.environ.get("ANTHROPIC_API_KEY") and not assessment_incomplete:
         report = _llm_report(state, violations)
     else:
         report = _template_report(state, violations)

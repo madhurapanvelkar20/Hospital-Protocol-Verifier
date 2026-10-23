@@ -54,6 +54,7 @@ KNOWN_DRUGS = [
     "simvastatin", "furosemide", "ibuprofen", "amoxicillin",
     "digoxin", "levothyroxine", "omeprazole", "clopidogrel",
     "insulin", "losartan", "prednisone", "amlodipine",
+    "telmisartan", "atorvastatin",
 ]
 
 KNOWN_DIAGNOSES = [

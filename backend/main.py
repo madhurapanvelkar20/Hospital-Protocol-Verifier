@@ -12,7 +12,7 @@ Run with:
 import json
 from typing import List, Optional
 
-from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi import FastAPI, Depends, HTTPException, status, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel, EmailStr
@@ -22,6 +22,8 @@ from src.config import SAMPLE_PRESCRIPTIONS_FILE, KNOWN_DRUGS, KNOWN_DIAGNOSES, 
 from src.graph import run_pipeline
 from src.auth import hash_password, verify_password, create_access_token, decode_access_token
 from src.db import init_db, get_db, User, VerificationHistory, save_verification
+from src.ocr import extract_text_from_image, OcrUnavailableError, OcrProcessingError
+from src.prescription_extract import extract_structured_fields
 
 app = FastAPI(title="Hospital Treatment Protocol Verifier API")
 
@@ -144,7 +146,12 @@ def samples():
 class VerifyRequest(BaseModel):
     raw_text: str
     diagnosis_hint: Optional[str] = None
-    ordered_tests: List[str] = []
+    # None  -> field not supplied: fall back to the "tests ordered" section of
+    #          raw_text (API clients that send only text).
+    # list  -> the user-confirmed list is authoritative, even if empty. It is
+    #          NOT merged with a re-scan of raw_text, otherwise lines the user
+    #          removed from the field (or OCR header/footer text) would come back.
+    ordered_tests: Optional[List[str]] = None
 
 
 @app.post("/api/verify")
@@ -155,9 +162,65 @@ def verify(
 ):
     """Runs the full 5-agent pipeline, saves the run to the logged-in
     user's history, and returns the complete result state."""
-    result = run_pipeline(req.raw_text, req.diagnosis_hint or "", req.ordered_tests)
+    if not req.raw_text.strip():
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+            detail="Prescription text cannot be empty.",
+        )
+
+    if req.ordered_tests is None:
+        ordered_tests = extract_structured_fields(req.raw_text)["ordered_tests"]
+    else:
+        ordered_tests = list(dict.fromkeys(t.strip() for t in req.ordered_tests if t and t.strip()))
+    result = run_pipeline(req.raw_text, req.diagnosis_hint or "", ordered_tests)
     save_verification(db, user.id, req.raw_text, req.diagnosis_hint, result)
     return result
+
+
+MAX_OCR_IMAGE_BYTES = 8 * 1024 * 1024  # 8MB
+ALLOWED_IMAGE_MIME_TYPES = {"image/png", "image/jpeg", "image/jpg"}
+
+
+@app.post("/api/ocr")
+@app.post("/api/ocr/extract")
+async def ocr(
+    file: UploadFile = File(...),
+    user: User = Depends(get_current_user),
+):
+    """Extracts raw text from a photographed/scanned prescription image,
+    plus a best-effort structured extraction of any diagnoses and ordered
+    tests it can find (see src/prescription_extract.py). Everything is
+    returned for the user to REVIEW AND EDIT before verification runs --
+    OCR/extraction errors on a drug name, diagnosis, or test are exactly
+    the kind of mistake this project exists to catch, not introduce."""
+    if not file.content_type or file.content_type.lower() not in ALLOWED_IMAGE_MIME_TYPES:
+        raise HTTPException(status_code=400, detail="Please upload an image file (PNG or JPEG).")
+
+    image_bytes = await file.read(MAX_OCR_IMAGE_BYTES + 1)
+    if len(image_bytes) > MAX_OCR_IMAGE_BYTES:
+        raise HTTPException(status_code=400, detail="Image is too large (max 8MB).")
+
+    try:
+        text = extract_text_from_image(image_bytes)
+    except OcrUnavailableError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+    except OcrProcessingError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    if not text:
+        raise HTTPException(
+            status_code=422,
+            detail="No text could be read from this image. Try a clearer, well-lit photo.",
+        )
+
+    fields = extract_structured_fields(text)
+    return {
+        "extracted_text": text,
+        "diagnoses": fields["diagnoses"],
+        "ordered_tests": fields["ordered_tests"],
+    }
 
 
 @app.get("/api/history")

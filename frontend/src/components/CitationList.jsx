@@ -1,7 +1,7 @@
 export default function CitationList({ chunks, confidence }) {
   return (
     <div className="trace-block">
-      <h3 className="trace-block__title">Matched guideline</h3>
+      <h3 className="trace-block__title">Retrieved protocol context</h3>
       {chunks.length > 0 ? (
         <ul className="citation-list">
           {chunks.map((chunk, i) => (

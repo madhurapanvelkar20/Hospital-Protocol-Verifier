@@ -18,6 +18,7 @@ class VerifierState(TypedDict, total=False):
     # ---- Prescription Parser Agent output ----
     parsed_drugs: List[Dict[str, Any]]   # [{name, dose, route, frequency}]
     parsed_diagnosis: Optional[str]
+    parsed_diagnoses: List[str]
 
     # ---- Retriever Agent output ----
     retrieval_query: str
@@ -28,6 +29,8 @@ class VerifierState(TypedDict, total=False):
     # ---- Cross-Check Agent output ----
     drug_drug_flags: List[Dict[str, Any]]
     drug_diagnosis_flags: List[Dict[str, Any]]
+    unassessed_drugs: List[str]
+    unassessed_diagnoses: List[str]
 
     # ---- Missing-Test Detector Agent output ----
     missing_tests: List[Dict[str, Any]]

@@ -1,7 +1,7 @@
 """
 LLM-based Prescription Parser Agent.
 
-Unlike parser_agent.py (regex + a hardcoded 16-drug vocabulary), this
+Unlike parser_agent.py (regex + a bounded medication vocabulary), this
 version sends the raw prescription text to Claude and asks for structured
 JSON back, so it can handle any drug or diagnosis mentioned in free text --
 not just the ones in KNOWN_DRUGS/KNOWN_DIAGNOSES.
@@ -21,8 +21,12 @@ import json
 import os
 from typing import Dict, Any
 
+from src.config import KNOWN_DRUGS
 from src.state import VerifierState
-from src.agents.parser_agent import parse_prescription as regex_parse_prescription
+from src.agents.parser_agent import (
+    _extract_diagnoses,
+    parse_prescription as regex_parse_prescription,
+)
 
 SYSTEM_PROMPT = """You extract structured data from a clinical prescription note.
 
@@ -30,16 +34,17 @@ Return ONLY a JSON object (no markdown fences, no commentary) with this exact sh
 {
   "drugs": [
     {"name": "<lowercase generic drug name>", "dose": "<e.g. 10mg, or 'unspecified'>",
-     "route": "<e.g. oral, IV, topical, or 'oral' if not stated>",
+     "route": "<e.g. oral, IV, topical, or 'unspecified' if not stated>",
      "frequency": "<e.g. once daily, twice daily, or 'unspecified'>"}
   ],
-  "diagnosis": "<the working diagnosis/indication mentioned, lowercase, or null if none stated>"
+  "diagnoses": ["<each working diagnosis/indication mentioned, lowercase>"]
 }
 
 Rules:
 - Include every drug mentioned, even ones you're not fully certain about.
 - Use the drug's generic name in lowercase (e.g. "metformin", not "Metformin" or a brand name).
-- If a detail isn't stated, use "unspecified" for that field (or null for diagnosis).
+- If a detail isn't stated, use "unspecified" for that field and an empty diagnoses list.
+- Preserve every diagnosis explicitly mentioned.
 - Do not invent a diagnosis that isn't implied by the text."""
 
 
@@ -77,17 +82,26 @@ def parse_prescription_llm(state: VerifierState) -> Dict[str, Any]:
             {
                 "name": d.get("name", "").lower().strip(),
                 "dose": d.get("dose", "unspecified"),
-                "route": d.get("route", "oral"),
+                "route": d.get("route", "unspecified"),
                 "frequency": d.get("frequency", "unspecified"),
+                "recognized": d.get("name", "").lower().strip() in KNOWN_DRUGS,
             }
             for d in parsed.get("drugs", [])
             if d.get("name")
         ]
-        diagnosis = diagnosis_hint or (parsed.get("diagnosis") or None)
-        if diagnosis:
-            diagnosis = diagnosis.lower().strip()
+        model_diagnoses = parsed.get("diagnoses")
+        if not isinstance(model_diagnoses, list):
+            model_diagnoses = [parsed.get("diagnosis")] if parsed.get("diagnosis") else []
+        diagnosis_input = diagnosis_hint or ", ".join(
+            str(diagnosis).strip() for diagnosis in model_diagnoses if diagnosis
+        )
+        diagnoses = _extract_diagnoses("", diagnosis_input)
 
-        return {"parsed_drugs": drugs, "parsed_diagnosis": diagnosis}
+        return {
+            "parsed_drugs": drugs,
+            "parsed_diagnoses": diagnoses,
+            "parsed_diagnosis": ", ".join(diagnoses) or None,
+        }
     except Exception:
         # Any failure (bad key, network error, malformed JSON) -- fall back
         # to the regex parser rather than crashing the pipeline.

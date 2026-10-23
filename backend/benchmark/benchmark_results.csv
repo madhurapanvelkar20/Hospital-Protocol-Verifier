@@ -1,0 +1,101 @@
+Case ID,Category,Expected Violation Count,Predicted Violation Count,Expected Types,Predicted Types,Exact Match,TP,FP,FN,Prescription Text
+clean_001,clean,0,0,None,None,True,0,0,0,Prescribe Lisinopril 10mg oral once daily for hypertension.
+clean_002,clean,0,0,None,None,True,0,0,0,Prescribe Lisinopril 20mg oral once daily for hypertension.
+clean_003,clean,0,0,None,None,True,0,0,0,Prescribe Metformin 500mg oral twice daily for type 2 diabetes.
+clean_004,clean,0,0,None,None,True,0,0,0,Prescribe Metformin 1000mg oral twice daily for type 2 diabetes.
+clean_005,clean,0,0,None,None,True,0,0,0,Prescribe Warfarin 5mg oral once daily for atrial fibrillation.
+clean_006,clean,0,0,None,None,True,0,0,0,Prescribe Warfarin 2.5mg oral once daily for atrial fibrillation.
+clean_007,clean,0,0,None,None,True,0,0,0,Prescribe Methotrexate 10mg oral once weekly for rheumatoid arthritis.
+clean_008,clean,0,0,None,None,True,0,0,0,Prescribe Methotrexate 15mg oral once weekly for rheumatoid arthritis.
+clean_009,clean,0,0,None,None,True,0,0,0,Prescribe Simvastatin 20mg oral once daily for hyperlipidemia.
+clean_010,clean,0,0,None,None,True,0,0,0,Prescribe Simvastatin 40mg oral once daily for hyperlipidemia.
+clean_011,clean,0,0,None,None,True,0,0,0,Prescribe Furosemide 40mg oral once daily for heart failure.
+clean_012,clean,0,0,None,None,True,0,0,0,Prescribe Furosemide 20mg oral once daily for heart failure.
+clean_013,clean,0,0,None,None,True,0,0,0,Prescribe Ibuprofen 400mg oral three times daily for rheumatoid arthritis.
+clean_014,clean,0,0,None,None,True,0,0,0,Prescribe Amoxicillin 500mg oral three times daily for coronary artery disease.
+clean_015,clean,0,0,None,None,True,0,0,0,Prescribe Digoxin 0.25mg oral once daily for heart failure.
+clean_016,clean,0,0,None,None,True,0,0,0,Prescribe Digoxin 0.125mg oral once daily for heart failure.
+clean_017,clean,0,0,None,None,True,0,0,0,Prescribe Levothyroxine 100mcg oral once daily for hypothyroidism.
+clean_018,clean,0,0,None,None,True,0,0,0,Prescribe Levothyroxine 50mcg oral once daily for hypothyroidism.
+clean_019,clean,0,0,None,None,True,0,0,0,Prescribe Omeprazole 20mg oral once daily for gastroesophageal reflux disease.
+clean_020,clean,0,0,None,None,True,0,0,0,Prescribe Clopidogrel 75mg oral once daily for coronary artery disease.
+clean_021,clean,0,0,None,None,True,0,0,0,Prescribe Insulin 10mg oral once daily for type 2 diabetes.
+clean_022,clean,0,0,None,None,True,0,0,0,Prescribe Losartan 50mg oral once daily for hypertension.
+clean_023,clean,0,0,None,None,True,0,0,0,Prescribe Losartan 100mg oral once daily for hypertension.
+clean_024,clean,0,0,None,None,True,0,0,0,Prescribe Prednisone 10mg oral once daily for rheumatoid arthritis.
+clean_025,clean,0,0,None,None,True,0,0,0,Prescribe Amlodipine 5mg oral once daily for hypertension.
+missing_test_026,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Warfarin 5mg oral once daily for atrial fibrillation.
+missing_test_027,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Warfarin 2.5mg oral once daily for atrial fibrillation.
+missing_test_028,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Metformin 500mg oral twice daily for type 2 diabetes.
+missing_test_029,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Metformin 1000mg oral twice daily for type 2 diabetes.
+missing_test_030,missing_test,2,2,missing monitoring test; missing monitoring test,missing monitoring test; missing monitoring test,True,2,0,0,Prescribe Methotrexate 10mg oral once weekly for rheumatoid arthritis.
+missing_test_031,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Methotrexate 15mg oral once weekly for rheumatoid arthritis.
+missing_test_032,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Methotrexate 7.5mg oral once weekly for rheumatoid arthritis.
+missing_test_033,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Simvastatin 20mg oral once daily for hyperlipidemia.
+missing_test_034,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Simvastatin 40mg oral once daily for hyperlipidemia.
+missing_test_035,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Furosemide 40mg oral once daily for heart failure.
+missing_test_036,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Furosemide 20mg oral once daily for heart failure.
+missing_test_037,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Lisinopril 10mg oral once daily for hypertension.
+missing_test_038,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Lisinopril 20mg oral once daily for hypertension.
+missing_test_039,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Digoxin 0.25mg oral once daily for heart failure.
+missing_test_040,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Digoxin 0.125mg oral once daily for heart failure.
+missing_test_041,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Levothyroxine 100mcg oral once daily for hypothyroidism.
+missing_test_042,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Levothyroxine 50mcg oral once daily for hypothyroidism.
+missing_test_043,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Clopidogrel 75mg oral once daily for coronary artery disease.
+missing_test_044,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Clopidogrel 150mg oral once daily for coronary artery disease.
+missing_test_045,missing_test,2,2,missing monitoring test; missing monitoring test,missing monitoring test; missing monitoring test,True,2,0,0,Prescribe Insulin 10mg oral once daily for type 2 diabetes.
+missing_test_046,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Insulin 20mg oral once daily for type 2 diabetes.
+missing_test_047,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Insulin 10mg oral once daily for type 2 diabetes.
+missing_test_048,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Losartan 50mg oral once daily for hypertension.
+missing_test_049,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Losartan 100mg oral once daily for hypertension.
+missing_test_050,missing_test,1,1,missing monitoring test,missing monitoring test,True,1,0,0,Prescribe Prednisone 10mg oral once daily for rheumatoid arthritis.
+drug_drug_051,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Patient on Warfarin 5mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily for atrial fibrillation.
+drug_drug_052,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Prescribe combination therapy: Ibuprofen 600mg oral three times daily co-administered with Warfarin 2.5mg oral once daily for atrial fibrillation.
+drug_drug_053,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Patient on Warfarin 5mg oral once daily is additionally prescribed Amoxicillin 500mg oral three times daily for atrial fibrillation.
+drug_drug_054,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Prescribe combination therapy: Amoxicillin 250mg oral three times daily co-administered with Warfarin 2.5mg oral once daily for atrial fibrillation.
+drug_drug_055,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Patient on Methotrexate 10mg oral once weekly is additionally prescribed Ibuprofen 400mg oral three times daily for rheumatoid arthritis.
+drug_drug_056,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Prescribe combination therapy: Ibuprofen 600mg oral three times daily co-administered with Methotrexate 15mg oral once weekly for rheumatoid arthritis.
+drug_drug_057,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Patient on Lisinopril 10mg oral once daily is additionally prescribed Furosemide 40mg oral once daily for hypertension.
+drug_drug_058,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Prescribe combination therapy: Furosemide 20mg oral once daily co-administered with Lisinopril 20mg oral once daily for hypertension.
+drug_drug_059,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Patient on Digoxin 0.25mg oral once daily is additionally prescribed Furosemide 40mg oral once daily for heart failure.
+drug_drug_060,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Prescribe combination therapy: Furosemide 20mg oral once daily co-administered with Digoxin 0.125mg oral once daily for heart failure.
+drug_drug_061,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Patient on Clopidogrel 75mg oral once daily is additionally prescribed Omeprazole 20mg oral once daily for coronary artery disease.
+drug_drug_062,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Prescribe combination therapy: Omeprazole 40mg oral once daily co-administered with Clopidogrel 150mg oral once daily for coronary artery disease.
+drug_drug_063,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Patient on Clopidogrel 75mg oral once daily is additionally prescribed Warfarin 5mg oral once daily for coronary artery disease.
+drug_drug_064,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Prescribe combination therapy: Warfarin 2.5mg oral once daily co-administered with Clopidogrel 150mg oral once daily for coronary artery disease.
+drug_drug_065,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Patient on Clopidogrel 75mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily for coronary artery disease.
+drug_drug_066,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Prescribe combination therapy: Ibuprofen 600mg oral three times daily co-administered with Clopidogrel 150mg oral once daily for coronary artery disease.
+drug_drug_067,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Patient on Prednisone 10mg oral once daily is additionally prescribed Ibuprofen 400mg oral three times daily for rheumatoid arthritis.
+drug_drug_068,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Prescribe combination therapy: Ibuprofen 600mg oral three times daily co-administered with Prednisone 20mg oral once daily for rheumatoid arthritis.
+drug_drug_069,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Patient on Lisinopril 10mg oral once daily is additionally prescribed Losartan 50mg oral once daily for hypertension.
+drug_drug_070,drug_drug,1,1,drug-drug interaction,drug-drug interaction,True,1,0,0,Prescribe combination therapy: Losartan 100mg oral once daily co-administered with Lisinopril 20mg oral once daily for hypertension.
+drug_diagnosis_071,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Prescribe Metformin 500mg oral twice daily for patient diagnosed with renal impairment.
+drug_diagnosis_072,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Patient with underlying renal impairment presents for therapy. Prescribe Metformin 1000mg oral twice daily.
+drug_diagnosis_073,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Prescribe Metformin 850mg oral once daily. Patient medical history positive for renal impairment.
+drug_diagnosis_074,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Prescribe Lisinopril 10mg oral once daily for patient diagnosed with pregnancy.
+drug_diagnosis_075,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Patient with underlying pregnancy presents for therapy. Prescribe Lisinopril 20mg oral once daily.
+drug_diagnosis_076,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Prescribe Lisinopril 5mg oral once daily. Patient medical history positive for pregnancy.
+drug_diagnosis_077,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Prescribe Losartan 50mg oral once daily for patient diagnosed with pregnancy.
+drug_diagnosis_078,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Patient with underlying pregnancy presents for therapy. Prescribe Losartan 100mg oral once daily.
+drug_diagnosis_079,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Prescribe Losartan 25mg oral once daily. Patient medical history positive for pregnancy.
+drug_diagnosis_080,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Prescribe Ibuprofen 400mg oral three times daily for patient diagnosed with peptic ulcer disease.
+drug_diagnosis_081,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Patient with underlying peptic ulcer disease presents for therapy. Prescribe Ibuprofen 600mg oral three times daily.
+drug_diagnosis_082,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Prescribe Ibuprofen 200mg oral as needed. Patient medical history positive for peptic ulcer disease.
+drug_diagnosis_083,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Prescribe Digoxin 0.25mg oral once daily for patient diagnosed with renal impairment.
+drug_diagnosis_084,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Patient with underlying renal impairment presents for therapy. Prescribe Digoxin 0.125mg oral once daily.
+drug_diagnosis_085,drug_diagnosis,1,1,drug-diagnosis contraindication,drug-diagnosis contraindication,True,1,0,0,Prescribe Digoxin 0.25mg oral once daily. Patient medical history positive for renal impairment.
+multiple_086,multiple,2,2,drug-drug interaction; missing monitoring test,drug-drug interaction; missing monitoring test,True,2,0,0,Patient diagnosed with atrial fibrillation is prescribed Warfarin 5mg oral once daily together with Ibuprofen 400mg oral three times daily.
+multiple_087,multiple,2,2,drug-drug interaction; missing monitoring test,drug-drug interaction; missing monitoring test,True,2,0,0,Patient diagnosed with coronary artery disease is prescribed Warfarin 5mg oral once daily together with Amoxicillin 500mg oral three times daily.
+multiple_088,multiple,3,3,drug-drug interaction; missing monitoring test; missing monitoring test,drug-drug interaction; missing monitoring test; missing monitoring test,True,3,0,0,Patient diagnosed with rheumatoid arthritis is prescribed Methotrexate 10mg oral once weekly together with Ibuprofen 400mg oral three times daily.
+multiple_089,multiple,3,3,drug-drug interaction; missing monitoring test; missing monitoring test,drug-drug interaction; missing monitoring test; missing monitoring test,True,3,0,0,Patient diagnosed with heart failure is prescribed Lisinopril 10mg oral once daily together with Furosemide 40mg oral once daily.
+multiple_090,multiple,3,3,drug-drug interaction; missing monitoring test; missing monitoring test,drug-drug interaction; missing monitoring test; missing monitoring test,True,3,0,0,Patient diagnosed with heart failure is prescribed Digoxin 0.25mg oral once daily together with Furosemide 40mg oral once daily.
+multiple_091,multiple,2,2,drug-drug interaction; missing monitoring test,drug-drug interaction; missing monitoring test,True,2,0,0,Patient diagnosed with coronary artery disease is prescribed Clopidogrel 75mg oral once daily together with Omeprazole 20mg oral once daily.
+multiple_092,multiple,3,3,drug-drug interaction; missing monitoring test; missing monitoring test,drug-drug interaction; missing monitoring test; missing monitoring test,True,3,0,0,Patient diagnosed with atrial fibrillation is prescribed Clopidogrel 75mg oral once daily together with Warfarin 5mg oral once daily.
+multiple_093,multiple,2,2,drug-drug interaction; missing monitoring test,drug-drug interaction; missing monitoring test,True,2,0,0,Patient diagnosed with coronary artery disease is prescribed Clopidogrel 75mg oral once daily together with Ibuprofen 400mg oral three times daily.
+multiple_094,multiple,2,2,drug-drug interaction; missing monitoring test,drug-drug interaction; missing monitoring test,True,2,0,0,Patient diagnosed with rheumatoid arthritis is prescribed Prednisone 10mg oral once daily together with Ibuprofen 400mg oral three times daily.
+multiple_095,multiple,3,3,drug-drug interaction; missing monitoring test; missing monitoring test,drug-drug interaction; missing monitoring test; missing monitoring test,True,3,0,0,Patient diagnosed with hypertension is prescribed Lisinopril 10mg oral once daily together with Losartan 50mg oral once daily.
+multiple_096,multiple,2,2,drug-diagnosis contraindication; missing monitoring test,drug-diagnosis contraindication; missing monitoring test,True,2,0,0,Prescribe Metformin 500mg oral twice daily for patient with documented renal impairment.
+multiple_097,multiple,2,2,drug-diagnosis contraindication; missing monitoring test,drug-diagnosis contraindication; missing monitoring test,True,2,0,0,Prescribe Lisinopril 10mg oral once daily for patient with documented pregnancy.
+multiple_098,multiple,2,2,drug-diagnosis contraindication; missing monitoring test,drug-diagnosis contraindication; missing monitoring test,True,2,0,0,Prescribe Digoxin 0.25mg oral once daily for patient with documented renal impairment.
+multiple_099,multiple,2,2,drug-drug interaction; drug-diagnosis contraindication,drug-drug interaction; drug-diagnosis contraindication,True,2,0,0,Prescribe Lisinopril 10mg oral once daily and Furosemide 40mg oral once daily for patient with confirmed pregnancy.
+multiple_100,multiple,2,2,drug-drug interaction; drug-diagnosis contraindication,drug-drug interaction; drug-diagnosis contraindication,True,2,0,0,Prescribe Digoxin 0.25mg oral once daily and Furosemide 40mg oral once daily for patient with confirmed renal impairment.

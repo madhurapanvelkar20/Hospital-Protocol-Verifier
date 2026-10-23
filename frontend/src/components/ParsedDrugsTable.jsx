@@ -1,4 +1,6 @@
-export default function ParsedDrugsTable({ drugs, diagnosis }) {
+export default function ParsedDrugsTable({ drugs, diagnosis, unassessedDrugs = [], unassessedDiagnoses = [] }) {
+  const diagnosisText = Array.isArray(diagnosis) ? diagnosis.join(", ") : diagnosis;
+
   return (
     <div className="trace-block">
       <h3 className="trace-block__title">Prescription details</h3>
@@ -13,9 +15,19 @@ export default function ParsedDrugsTable({ drugs, diagnosis }) {
             </tr>
           </thead>
           <tbody>
-            {drugs.map((d) => (
-              <tr key={d.name}>
-                <td>{d.name.replace(/^\w/, (c) => c.toUpperCase())}</td>
+            {drugs.map((d, i) => (
+              <tr key={`${d.name}-${i}`}>
+                <td>
+                  {d.name.replace(/^\w/, (c) => c.toUpperCase())}
+                  {(d.recognized === false || unassessedDrugs.includes(d.name)) && (
+                    <span
+                      className="trace-block__meta"
+                      title="This medicine was read from the prescription, but the configured rules do not assess it."
+                    >
+                      {" "}(not assessed)
+                    </span>
+                  )}
+                </td>
                 <td className="mono">{d.dose}</td>
                 <td>{d.route}</td>
                 <td>{d.frequency}</td>
@@ -24,10 +36,15 @@ export default function ParsedDrugsTable({ drugs, diagnosis }) {
           </tbody>
         </table>
       ) : (
-        <p className="trace-block__empty">No known drugs were detected in the prescription text.</p>
+        <p className="trace-block__empty">
+          No medicines could be extracted. Correct the prescription text before relying on any result.
+        </p>
       )}
       <p className="trace-block__meta">
-        Diagnosis: <strong>{diagnosis || "not detected"}</strong>
+        Diagnosis: <strong>{diagnosisText || "not detected"}</strong>
+        {unassessedDiagnoses.length > 0 && (
+          <>{" "}(not assessed: {unassessedDiagnoses.join(", ")})</>
+        )}
       </p>
     </div>
   );
